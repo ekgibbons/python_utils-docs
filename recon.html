@@ -1,0 +1,403 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>recon package &mdash; python_utils 0.1.0 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="python_utils 0.1.0 documentation" href="index.html"/>
+        <link rel="next" title="utils package" href="utils.html"/>
+        <link rel="prev" title="mri package" href="mri.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+          <a href="index.html" class="fa fa-home"> python_utils</a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="mri.html">mri package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mri.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mri.html#module-mri.epg">mri.epg module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mri.html#mri-rawloadx-module">mri.rawloadX module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mri.html#module-mri">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">recon package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-recon">Module contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-recon.fftc">recon.fftc module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-recon.imtools">recon.imtools module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-recon.sos">recon.sos module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-recon.tempinterp">recon.tempinterp module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="utils.html">utils package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#module-utils">Module contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#module-utils.display">utils.display module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#module-utils.matutils">utils.matutils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#module-utils.mkdir">utils.mkdir module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#module-utils.readhd5">utils.readhd5 module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#module-utils.roiselector">utils.roiselector module</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">python_utils</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>recon package</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="_sources/recon.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="recon-package">
+<h1>recon package<a class="headerlink" href="#recon-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-recon">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-recon" title="Permalink to this headline">¶</a></h2>
+<p>This module includes many of the useful MRI reconstruction functions.  At the moment it includes stuff like FFTs, sum of squares, registration, and interpolation.</p>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-recon.fftc">
+<span id="recon-fftc-module"></span><h2>recon.fftc module<a class="headerlink" href="#module-recon.fftc" title="Permalink to this headline">¶</a></h2>
+<p>Centered FFTs</p>
+<dl class="function">
+<dt id="recon.fftc.fft2c">
+<code class="descclassname">recon.fftc.</code><code class="descname">fft2c</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#recon.fftc.fft2c" title="Permalink to this definition">¶</a></dt>
+<dd><p>Centered FFT.  User specifies the dimension of the transform.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="recon.fftc.fftc">
+<code class="descclassname">recon.fftc.</code><code class="descname">fftc</code><span class="sig-paren">(</span><em>data</em>, <em>dim</em><span class="sig-paren">)</span><a class="headerlink" href="#recon.fftc.fftc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Centered FFT.  User specifies the dimension of the transform.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="recon.fftc.ifft2c">
+<code class="descclassname">recon.fftc.</code><code class="descname">ifft2c</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#recon.fftc.ifft2c" title="Permalink to this definition">¶</a></dt>
+<dd><p>Centered FFT.  User specifies the dimension of the transform.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="recon.fftc.ifftc">
+<code class="descclassname">recon.fftc.</code><code class="descname">ifftc</code><span class="sig-paren">(</span><em>data</em>, <em>dim</em><span class="sig-paren">)</span><a class="headerlink" href="#recon.fftc.ifftc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Centered iFFT.  User specifies the dimension of the transform.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-recon.imtools">
+<span id="recon-imtools-module"></span><h2>recon.imtools module<a class="headerlink" href="#module-recon.imtools" title="Permalink to this headline">¶</a></h2>
+<p>These are some basic tools for image processing.  This
+includes basic sinc interpolation, image cropping, zeropadding,
+and registration.</p>
+<dl class="function">
+<dt id="recon.imtools.Crop">
+<code class="descclassname">recon.imtools.</code><code class="descname">Crop</code><span class="sig-paren">(</span><em>im</em>, <em>cropy</em>, <em>cropx</em><span class="sig-paren">)</span><a class="headerlink" href="#recon.imtools.Crop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Crops or pads image to the specified dimensions.  This assums
+that the original is up to 4D (dim0, dim1, dim2, dim3) and crops in
+dim0 and dim1.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>im</strong> (<em>array_like</em>) &#8211; Array to be cropped.  Can be up to 4D</li>
+<li><strong>cropy</strong> (<em>int</em>) &#8211; Extent of cropping in dim0</li>
+<li><strong>cropx</strong> (<em>int</em>) &#8211; Extent of cropping in dim1</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>im</strong> &#8211;
+Output image</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">array_like</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="recon.imtools.Interpolate">
+<code class="descclassname">recon.imtools.</code><code class="descname">Interpolate</code><span class="sig-paren">(</span><em>im</em>, <em>cropy</em>, <em>cropx</em><span class="sig-paren">)</span><a class="headerlink" href="#recon.imtools.Interpolate" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is sinc interpolation (in Fourier domain) along the
+first two dimensions of an array.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>im</strong> (<em>Input image</em>) &#8211; Image to be interpolated.  Can be complex or real and
+can have up to four dimensions</li>
+<li><strong>cropy</strong> (<em>int</em>) &#8211; The extent of interpolation in y (first dimension)</li>
+<li><strong>cropx</strong> (<em>int</em>) &#8211; The extent of interpolation in x (second dimension)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>im</strong> &#8211;
+Interpolated array</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">array_like</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="recon.imtools.Register2D">
+<code class="descclassname">recon.imtools.</code><code class="descname">Register2D</code><span class="sig-paren">(</span><em>data</em>, <em>regType='SyNRA'</em>, <em>verbose=True</em><span class="sig-paren">)</span><a class="headerlink" href="#recon.imtools.Register2D" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is a 2D registration for a stack of images using
+ANTs</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>data</strong> (<em>array_like</em>) &#8211; A stack of 2D images in a 3D array, with registration
+occurring on third dimension</li>
+<li><strong>regType</strong> (<em>str</em>) &#8211; Description of ANTs registration</li>
+<li><strong>verbose</strong> (<em>bool</em>) &#8211; Verbose output</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>dataReg</strong> &#8211;
+Array of 2D images that have been registered</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">array_like</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="recon.imtools.Register3D">
+<code class="descclassname">recon.imtools.</code><code class="descname">Register3D</code><span class="sig-paren">(</span><em>data</em>, <em>regType='SyNRA'</em>, <em>verbose=True</em><span class="sig-paren">)</span><a class="headerlink" href="#recon.imtools.Register3D" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is a 3D registration for a stack of images using
+ANTs</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>data</strong> (<em>array_like</em>) &#8211; A stack of 3D images in a 4D array, with registration
+occurring on third dimension</li>
+<li><strong>regType</strong> (<em>str</em>) &#8211; Description of ANTs registration</li>
+<li><strong>verbose</strong> (<em>bool</em>) &#8211; Verbose output</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>dataReg</strong> &#8211;
+Array of 3D images that have been registered</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">array_like</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-recon.sos">
+<span id="recon-sos-module"></span><h2>recon.sos module<a class="headerlink" href="#module-recon.sos" title="Permalink to this headline">¶</a></h2>
+<p>Sum of squares coil combination</p>
+<dl class="function">
+<dt id="recon.sos.sos">
+<code class="descclassname">recon.sos.</code><code class="descname">sos</code><span class="sig-paren">(</span><em>data</em>, <em>dim</em><span class="sig-paren">)</span><a class="headerlink" href="#recon.sos.sos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sum-of-squares combination.  User specificies the dimension of the combination.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-recon.tempinterp">
+<span id="recon-tempinterp-module"></span><h2>recon.tempinterp module<a class="headerlink" href="#module-recon.tempinterp" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="recon.tempinterp.InterpolateSepConv">
+<code class="descclassname">recon.tempinterp.</code><code class="descname">InterpolateSepConv</code><span class="sig-paren">(</span><em>dataIn</em><span class="sig-paren">)</span><a class="headerlink" href="#recon.tempinterp.InterpolateSepConv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Note:  &#8220;ordering&#8221; refers to which frames are given,
+assuming we are counting from 0 in our indexing.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="recon.tempinterp.InterpolateSpline">
+<code class="descclassname">recon.tempinterp.</code><code class="descname">InterpolateSpline</code><span class="sig-paren">(</span><em>data</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#recon.tempinterp.InterpolateSpline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Temporal interpolation using splines.  Input array will be
+(y, x, t).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>data</strong> (<em>array_like</em>) &#8211; Data to be interpolated.  Should be (y, x, t)</li>
+<li><strong>inputTiming</strong> (<em>array_like, optional</em>) &#8211; 1D array of the temporal locations of the input data</li>
+<li><strong>outputTiming</strong> (<em>array_like, optional</em>) &#8211; 1D array of the locations where the interpolation should happen</li>
+<li><strong>interpKind</strong> (<em>str, optional</em>) &#8211; What type of interpolation (based on <cite>scipy.interpolate.interp1d</cite>)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
+<li><strong>dataInterpolate</strong> (<em>array_like</em>) &#8211;
+Interpolated data</li>
+<li><strong>outputTiming</strong> (<em>array_like</em>) &#8211;
+The timing used for the interpolation.  Most of the time this is the
+same as the output timing given passed as an argument, but can be
+modified if it falls out of range</li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="utils.html" class="btn btn-neutral float-right" title="utils package">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mri.html" class="btn btn-neutral" title="mri package"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Eric Gibbons.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
