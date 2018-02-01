@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>utils package &mdash; python_utils 0.1.0 documentation</title>
+  <title>utils package &mdash; python_utils 0.1.1 documentation</title>
   
 
   
@@ -30,7 +30,7 @@
   
 
   
-    <link rel="top" title="python_utils 0.1.0 documentation" href="index.html"/>
+    <link rel="top" title="python_utils 0.1.1 documentation" href="index.html"/>
         <link rel="prev" title="recon package" href="recon.html"/> 
 
   
@@ -64,10 +64,10 @@
           
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="mri.html">mri package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mri.html#module-mri">Module contents</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mri.html#submodules">Submodules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mri.html#module-mri.epg">mri.epg module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mri.html#mri-rawloadx-module">mri.rawloadX module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mri.html#module-mri">Module contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mri.html#module-mri.rawloadX">mri.rawloadX module</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="recon.html">recon package</a><ul>
@@ -76,7 +76,7 @@
 <li class="toctree-l2"><a class="reference internal" href="recon.html#module-recon.fftc">recon.fftc module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="recon.html#module-recon.imtools">recon.imtools module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="recon.html#module-recon.sos">recon.sos module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="recon.html#recon-tempinterp-module">recon.tempinterp module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="recon.html#module-recon.tempinterp">recon.tempinterp module</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">utils package</a><ul>
@@ -280,6 +280,25 @@ hardcoded at the moment.</p>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>pathName</strong> &#8211;
 The new folder full path</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="utils.mkdir.GetPatientNumber">
+<code class="descclassname">utils.mkdir.</code><code class="descname">GetPatientNumber</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#utils.mkdir.GetPatientNumber" title="Permalink to this definition">¶</a></dt>
+<dd><p>Takes the path name form the DiBella pathname convention.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>path</strong> (<em>str</em>) &#8211; The path to be analyzed</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>patientNumber</strong> &#8211;
+The patient number</td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">str</td>
 </tr>
@@ -508,6 +527,7 @@ The vertices of the selection (x1, x2, y1, y2)</td>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, Eric Gibbons.
+      Last updated on Feb 01, 2018.
     </p>
   </div>
 
@@ -528,7 +548,7 @@ The vertices of the selection (x1, x2, y1, y2)</td>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.1.0',
+            VERSION:'0.1.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
