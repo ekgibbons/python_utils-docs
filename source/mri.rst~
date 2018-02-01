@@ -1,15 +1,6 @@
 mri package
 ===========
 
-Module contents
----------------
-
-.. automodule:: mri
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-
 Submodules
 ----------
 
@@ -28,3 +19,10 @@ mri.rawloadX module
     :show-inheritance:
 
 
+Module contents
+---------------
+
+.. automodule:: mri
+    :members:
+    :undoc-members:
+    :show-inheritance:
