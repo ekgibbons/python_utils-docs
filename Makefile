@@ -61,7 +61,7 @@ html:
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
 
 git-%: 
-	git --git-dir $(BUILDDIR)/html/.git add .
+	git --git-dir $(BUILDDIR)/html/.git add --all .
 	git --git-dir $(BUILDDIR)/html/.git commit -m "$(@:git-%=%)"
 	git --git-dir $(BUILDDIR)/html/.git push origin gh-pages
 

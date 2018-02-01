@@ -47,6 +47,7 @@ help:
 	@echo "  changes    to make an overview of all changed/added/deprecated items"
 	@echo "  xml        to make Docutils-native XML files"
 	@echo "  pseudoxml  to make pseudoxml-XML files for display purposes"
+	@echo "  push       to push the generated html pages online"
 	@echo "  linkcheck  to check all external links for integrity"
 	@echo "  doctest    to run all doctests embedded in the documentation (if enabled)"
 	@echo "  coverage   to run coverage check of the documentation (if enabled)"
