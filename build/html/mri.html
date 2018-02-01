@@ -1,0 +1,348 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>mri package &mdash; python_utils 0.1.0 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="python_utils 0.1.0 documentation" href="index.html"/>
+        <link rel="next" title="recon package" href="recon.html"/>
+        <link rel="prev" title="Gibbons Python Utilities" href="index.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+          <a href="index.html" class="fa fa-home"> python_utils</a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">mri package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-mri.epg">mri.epg module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mri-rawloadx-module">mri.rawloadX module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-mri">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="recon.html">recon package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="recon.html#module-recon">Module contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="recon.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="recon.html#module-recon.fftc">recon.fftc module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="recon.html#module-recon.imtools">recon.imtools module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="recon.html#module-recon.sos">recon.sos module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="recon.html#module-recon.tempinterp">recon.tempinterp module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="utils.html">utils package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#module-utils">Module contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#module-utils.display">utils.display module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#module-utils.matutils">utils.matutils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#module-utils.mkdir">utils.mkdir module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#module-utils.readhd5">utils.readhd5 module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#module-utils.roiselector">utils.roiselector module</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">python_utils</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>mri package</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="_sources/mri.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="mri-package">
+<h1>mri package<a class="headerlink" href="#mri-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-mri.epg">
+<span id="mri-epg-module"></span><h2>mri.epg module<a class="headerlink" href="#module-mri.epg" title="Permalink to this headline">¶</a></h2>
+<p>Framework module providing functions for EPG simulations.  This is based heavily
+on Brian Hargreaves&#8217; EPG functions for Matlab (it is a translation some slight
+modifications).</p>
+<p>Example is provided in the main function.</p>
+<dl class="function">
+<dt id="mri.epg.epg_FZ2spins">
+<code class="descclassname">mri.epg.</code><code class="descname">epg_FZ2spins</code><span class="sig-paren">(</span><em>FpFmZ</em>, <em>N=0</em>, <em>frac=0</em><span class="sig-paren">)</span><a class="headerlink" href="#mri.epg.epg_FZ2spins" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function returns a 3xN array of the magnetization vectors [Mx My Mz]&#8217; that
+is represented by the EPG state FpFmZ.  Note that the magnetization assumes
+that a &#8220;voxel&#8221; is divided into N states, as is necessary to make the conversion
+N must be at least as large as twice the number of F+ states minus one.</p>
+<p>Arguments:
+- <cite>FpFmZ</cite>: F,Z states, 3xQ vector where there are Q states, where rows represent F+, F-,
+and Z states starting at 0.
+- <cite>N</cite>:  number of spins used to represent the states.  Default is minumum.
+- <cite>frac</cite>: (optional) fraction of state to increment/decrement so if frac=1, this is
+equivalent to first passing FpFmZ through epg_grad().  This is mostly just
+to make plots</p>
+<p>Returns:
+- <cite>M</cite>: magnetization vector</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="mri.epg.epg_cpmg">
+<code class="descclassname">mri.epg.</code><code class="descname">epg_cpmg</code><span class="sig-paren">(</span><em>flipangle</em>, <em>etl</em>, <em>T1</em>, <em>T2</em>, <em>esp</em><span class="sig-paren">)</span><a class="headerlink" href="#mri.epg.epg_cpmg" title="Permalink to this definition">¶</a></dt>
+<dd><p>EPG Simulation of CPMG sequence.  First flip angle
+is 90 about y axis, and others by default are about
+x-axis (make flipangle complex to change that).</p>
+<p>Note that if refoc flip angle is constant, less than pi, and etl &gt; 1 the
+first refocusing flip angle is the average of 90 and the desired
+refocusing flip angle, as proposed by Hennig.</p>
+<p>All states are kept, for demo purposes, though this
+is not really necessary.</p>
+<p>Arguments:
+- <cite>flipangle</cite>: the flipangle in radians, can be scalar or vector
+- <cite>etl</cite>: the echo train length
+- <cite>T1</cite>: relaxation time
+- <cite>T2</cite>: relaxation time
+- <cite>esp</cite>: echo spacing</p>
+<p>Returns:
+- <cite>s</cite>: signal vector</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="mri.epg.epg_cpmg_phase">
+<code class="descclassname">mri.epg.</code><code class="descname">epg_cpmg_phase</code><span class="sig-paren">(</span><em>flipangle</em>, <em>etl</em>, <em>T1</em>, <em>T2</em>, <em>esp</em>, <em>angle</em><span class="sig-paren">)</span><a class="headerlink" href="#mri.epg.epg_cpmg_phase" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is essentially the same thing as epg_cpmg but allows the user
+to add an arbitrary starting phase to the tipdown 90 pulse in order
+to simulate nCPMG effects.</p>
+<p>Arguments:
+- <cite>flipangle</cite>: the flipangle, can be scalar or vector
+- <cite>etl</cite>: the echo train length
+- <cite>T1</cite>: relaxation time
+- <cite>T2</cite>: relaxation time
+- <cite>esp</cite>: echo spacing
+- <cite>angle</cite>: angle for initial tipdown</p>
+<p>Returns:
+- <cite>s</cite>: signal vector</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="mri.epg.epg_grad">
+<code class="descclassname">mri.epg.</code><code class="descname">epg_grad</code><span class="sig-paren">(</span><em>FpFmZ</em>, <em>noadd=0</em><span class="sig-paren">)</span><a class="headerlink" href="#mri.epg.epg_grad" title="Permalink to this definition">¶</a></dt>
+<dd><p>Propagate EPG states through a &#8220;unit&#8221; gradient.</p>
+<p>Arguments:
+- <cite>FpFmZ</cite>: 3xN vector of F+, F- and Z states.
+- <cite>noadd</cite>: 1 to NOT add any higher-order states - assume
+that they just go to zero.  Be careful - this
+speeds up simulations, but may compromise accuracy!</p>
+<p>Returns:
+- <cite>FpFmZ</cite>: updated FpFmZ</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="mri.epg.epg_grelax">
+<code class="descclassname">mri.epg.</code><code class="descname">epg_grelax</code><span class="sig-paren">(</span><em>FpFmZ</em>, <em>T1</em>, <em>T2</em>, <em>T</em>, <em>kg</em>, <em>D</em>, <em>Gon=1</em>, <em>noadd=0</em><span class="sig-paren">)</span><a class="headerlink" href="#mri.epg.epg_grelax" title="Permalink to this definition">¶</a></dt>
+<dd><p>Propagate EPG states through a period of relaxation, and
+diffusion over an interval T, with or without a gradient.
+Leave last 3 blank to exclude diffusion effects.</p>
+<p>Arguments:
+- <cite>FpFmZ</cite>: 3xN vector of F+, F- and Z states.
+- <cite>T1</cite>: Relaxation times (s)
+- <cite>T2</cite>: Relaxation times (s)
+- <cite>T</cite>: Time interval (s)
+- <cite>kg</cite>: k-space traversal due to gradient (rad/m) for diffusion
+- <cite>D</cite>: Diffusion coefficient (m^2/s)
+- <cite>Gon</cite>: 0 if no gradient on, 1 if gradient on
+- <cite>noadd</cite>: 1 to not add higher-order states - see epg_grad</p>
+<p>Returns:
+- <cite>FpFmZ</cite>: updated FpFmZ</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="mri.epg.epg_mgrad">
+<code class="descclassname">mri.epg.</code><code class="descname">epg_mgrad</code><span class="sig-paren">(</span><em>FpFmZ</em>, <em>noadd=0</em><span class="sig-paren">)</span><a class="headerlink" href="#mri.epg.epg_mgrad" title="Permalink to this definition">¶</a></dt>
+<dd><p>Propagate EPG states through a <em>NEGATIVE</em> &#8220;unit&#8221; gradient.
+(States move the opposite direction to epg_grad!)</p>
+<p>Arguments:
+- <cite>FpFmZ</cite>: 3xN vector of F+, F- and Z states.
+- <cite>noadd</cite>: 1 to NOT add any higher-order states - assume
+that they just go to zero.  Be careful - this
+speeds up simulations, but may compromise accuracy!</p>
+<p>Returns:
+- <cite>FpFmZ</cite>: updated FpFmZ</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="mri.epg.epg_relax">
+<code class="descclassname">mri.epg.</code><code class="descname">epg_relax</code><span class="sig-paren">(</span><em>FpFmZ</em>, <em>T1</em>, <em>T2</em>, <em>T</em><span class="sig-paren">)</span><a class="headerlink" href="#mri.epg.epg_relax" title="Permalink to this definition">¶</a></dt>
+<dd><p>Propagate EPG states through a period of relaxation over an
+interval T</p>
+<p>Arguments:
+- <cite>FpFmZ</cite>: 3xN vector of F+, F- and Z states.
+- <cite>T1</cite>: Relaxation times (s)
+- <cite>T2</cite>: Relaxation times (s)
+- <cite>T</cite>: Time interval (s)
+- <cite>kg</cite>: k-space traversal due to gradient (rad/m) for diffusion
+- <cite>D</cite>: Diffusion coefficient (m^2/s)
+- <cite>Gon</cite>: 0 if no gradient on, 1 if gradient on
+- <cite>noadd</cite>: 1 to not add higher-order states - see epg_grad</p>
+<p>Returns:
+- <cite>FpFmZ</cite>: updated FpFmZ</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="mri.epg.epg_rf">
+<code class="descclassname">mri.epg.</code><code class="descname">epg_rf</code><span class="sig-paren">(</span><em>FpFmZ</em>, <em>alpha</em>, <em>phi=-1.5707963267948966</em><span class="sig-paren">)</span><a class="headerlink" href="#mri.epg.epg_rf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Propogate EPG states through RF pulse.</p>
+<p>Arguments:
+- <cite>FpFmZ</cite>: 3xN vector of F+, F- and Z states.
+- <cite>alpha</cite>: flip angle in radians.
+- <cite>phi</cite>: phase angle in radians.</p>
+<p>Returns:
+- <cite>FpFmZ</cite>: updated FpFmZ</p>
+</dd></dl>
+
+</div>
+<div class="section" id="mri-rawloadx-module">
+<h2>mri.rawloadX module<a class="headerlink" href="#mri-rawloadx-module" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-mri">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-mri" title="Permalink to this headline">¶</a></h2>
+<p>This is a collection of modules specific to MRI.  (E.g., reading
+raw files, simulations, etc.)</p>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="recon.html" class="btn btn-neutral float-right" title="recon package">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Gibbons Python Utilities"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Eric Gibbons.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
