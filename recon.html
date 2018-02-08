@@ -343,6 +343,38 @@ Array of 3D images that have been registered</p>
 </table>
 </dd></dl>
 
+<dl class="function">
+<dt id="recon.imtools.Register3DModel">
+<code class="descclassname">recon.imtools.</code><code class="descname">Register3DModel</code><span class="sig-paren">(</span><em>data</em>, <em>numPrecontrastBlood=5</em>, <em>numPrecontrastTissue=7</em>, <em>numProtonDensity=10</em>, <em>sliceCheck=4</em>, <em>frameCheck=31</em><span class="sig-paren">)</span><a class="headerlink" href="#recon.imtools.Register3DModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is a wrapper for the matlab implentation
+of 3D registration for 4D perfusion datasets.  This relies on
+the physiological model to handle the contrast changes from
+frame to frame.  It uses a spline deformable model on the
+backend.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>data</strong> (<em>array_like</em>) &#8211; Unregistered 4D data to be registered in the (y, x, t, z)
+format</li>
+<li><strong>numPrecontrastBlood</strong> (<em>int</em>) &#8211; Number of pre contrast blood images</li>
+<li><strong>numPrecontrastTissue</strong> (<em>int</em>) &#8211; Number of pre contrast tissue images</li>
+<li><strong>numProtonDensity</strong> (<em>int</em>) &#8211; Number of proton density images</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>dataReg</strong> &#8211;
+Registered data array (4D)</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">array_like</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 </div>
 <div class="section" id="module-recon.sos">
 <span id="recon-sos-module"></span><h2>recon.sos module<a class="headerlink" href="#module-recon.sos" title="Permalink to this headline">¶</a></h2>
@@ -417,7 +449,7 @@ modified if it falls out of range</li>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, Eric Gibbons.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 08, 2018.
     </p>
   </div>
 
