@@ -13,6 +13,14 @@ Module contents
 Submodules
 ----------
 
+mri.cardiac module
+------------------
+
+.. automodule:: mri.cardiac
+    :members:
+    :show-inheritance:
+
+
 mri.epg module
 --------------
 

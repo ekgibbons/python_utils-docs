@@ -67,6 +67,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="">mri package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#module-mri">Module contents</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-mri.cardiac">mri.cardiac module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-mri.epg">mri.epg module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-mri.rawloadX">mri.rawloadX module</a></li>
 </ul>
@@ -134,6 +135,30 @@ raw files, simulations, etc.)</p>
 </div>
 <div class="section" id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-mri.cardiac">
+<span id="mri-cardiac-module"></span><h2>mri.cardiac module<a class="headerlink" href="#module-mri.cardiac" title="Permalink to this headline">¶</a></h2>
+<p>Various functions related to cardiac MRI</p>
+<dl class="function">
+<dt id="mri.cardiac.ContrastFrameNumbers">
+<code class="descclassname">mri.cardiac.</code><code class="descname">ContrastFrameNumbers</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#mri.cardiac.ContrastFrameNumbers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates the frame numbers where contrast enters the blood and tissue.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>data</strong> (<em>array_like</em>) &#8211; 3D array <cite>(y, x, t)</cite> to be analyzed</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>frameNumbers</strong> &#8211;
+Tuple of the frame numbers <cite>(pdEnd, numPrecontrastBlood,
+numPrecontrastTissue)</cite></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">tuple (int, int, int)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 </div>
 <div class="section" id="module-mri.epg">
 <span id="mri-epg-module"></span><h2>mri.epg module<a class="headerlink" href="#module-mri.epg" title="Permalink to this headline">¶</a></h2>
@@ -500,7 +525,7 @@ the data</td>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, Eric Gibbons.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 09, 2018.
     </p>
   </div>
 
