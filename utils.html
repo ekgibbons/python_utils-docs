@@ -99,7 +99,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#module-utils.matutils">utils.matutils module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-utils.mkdir">utils.mkdir module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-utils.readhd5">utils.readhd5 module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#utils-roiselector-module">utils.roiselector module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-utils.roiselector">utils.roiselector module</a></li>
 </ul>
 </li>
 </ul>
@@ -373,8 +373,172 @@ as a dictionary key.</p>
 </dd></dl>
 
 </div>
-<div class="section" id="utils-roiselector-module">
-<h2>utils.roiselector module<a class="headerlink" href="#utils-roiselector-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-utils.roiselector">
+<span id="utils-roiselector-module"></span><h2>utils.roiselector module<a class="headerlink" href="#module-utils.roiselector" title="Permalink to this headline">¶</a></h2>
+<p>Classes and functions that provide the ability to select some arbitrary
+region of interest (ROI) and return some statistics over that region.</p>
+<dl class="function">
+<dt id="utils.roiselector.PolygonMean">
+<code class="descclassname">utils.roiselector.</code><code class="descname">PolygonMean</code><span class="sig-paren">(</span><em>data</em>, <em>mask</em><span class="sig-paren">)</span><a class="headerlink" href="#utils.roiselector.PolygonMean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given some input image and the mask of the ROI desired (1’s are
+pixels of interest and 0’s are not), find the mean value.</p>
+<p>This function assumes a 2D image can calculates the mean as a
+scalar, but a temporal dimension can also be added.  In that case,
+the same ROI is used at each time frame, and the output is given
+as a 1D array.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>data</strong> (<em>array_like</em>) – 2D (y,x) or 3D (y,x,t) data array</li>
+<li><strong>mask</strong> (<em>array_like</em>) – 2D (y,x) array of 1’s and 0’s, pixels of 1’s are the pixels
+that are ultimately counted in the mean</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>meanValues</strong> – Array of mean values if the input is 3D (temporal), a float is
+given it is strictly 2D</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">array_like (or float)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="utils.roiselector.PolygonSelect">
+<em class="property">class </em><code class="descclassname">utils.roiselector.</code><code class="descname">PolygonSelect</code><span class="sig-paren">(</span><em>data</em>, <em>zMiddle=None</em><span class="sig-paren">)</span><a class="headerlink" href="#utils.roiselector.PolygonSelect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This class reads in an image an allows the user to graphically
+select and ROI to generate statistics based on the underlying pixel
+values.</p>
+<p>To do the selection:
+1.  Select points in the figure by enclosing them within a polygon.
+2.  Press the ‘esc’ key to start a new polygon.
+3.  Try holding the ‘shift’ key to move all of the vertices.
+4.  Try holding the ‘ctrl’ key to move a single vertex.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>data</strong> (<em>array_like</em>) – Image data to be analyzed.  Can be 2D (y,x) or 3D (y,x,t).
+The ROI is selected from a single frame and is applied to all
+time images subsequently</li>
+<li><strong>zMiddle</strong> (<em>int</em>) – The time frame to be used if the image is 3D</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="utils.roiselector.PolygonSelect.DisplayROI">
+<code class="descname">DisplayROI</code><span class="sig-paren">(</span><em>saveName=None</em><span class="sig-paren">)</span><a class="headerlink" href="#utils.roiselector.PolygonSelect.DisplayROI" title="Permalink to this definition">¶</a></dt>
+<dd><p>Displays the ROI overlayed on top of the image used for the
+selection.  Not displayed until <cite>plt.show()</cite> is called.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>saveName</strong> (<em>str</em>) – The filename of the figure being saved</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="utils.roiselector.PolygonSelect.GenerateMask">
+<code class="descname">GenerateMask</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#utils.roiselector.PolygonSelect.GenerateMask" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates a 2D (x,y) mask from the selected ROI.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>mask</strong> – Mask (y,x) of the selected ROI in 1’s (selection) and 0’s (not-selected)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">array_like</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="utils.roiselector.PolygonSelect.PolygonMean">
+<code class="descname">PolygonMean</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#utils.roiselector.PolygonSelect.PolygonMean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate the mean values based on the selected ROI.  Will
+calculated the mean on a per frame basis.  If the input image
+is 2D, then a scalar is given.  If it is 3D, then the means
+will be calculated over the ROI at each time frame and a 1D
+array will be given.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>meanValues</strong> – Mean values calculated over the ROI for each time frame</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">str or array_like</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="utils.roiselector.RectangleMean">
+<code class="descclassname">utils.roiselector.</code><code class="descname">RectangleMean</code><span class="sig-paren">(</span><em>image</em>, <em>zMiddle=None</em><span class="sig-paren">)</span><a class="headerlink" href="#utils.roiselector.RectangleMean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Based on some input image, calculate the mean over
+some selected rectangular ROI.</p>
+<p>While this function does allow 3D images, the ROI is
+selected over one image and used for all images in the
+third dimension.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>image</strong> (<em>array_like</em>) – Image used.  Can be 2D (y,x) or 3D (y,x,z)</li>
+<li><strong>zMiddle</strong> (<em>int</em>) – The image used in the selection of the rectangle</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>meanValue</strong> – The mean value for the ROI</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">float or array_like</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="utils.roiselector.RectangleSelect">
+<code class="descclassname">utils.roiselector.</code><code class="descname">RectangleSelect</code><span class="sig-paren">(</span><em>image</em><span class="sig-paren">)</span><a class="headerlink" href="#utils.roiselector.RectangleSelect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Do a mouseclick somewhere, move the mouse to some destination, release
+the button.  This class gives click- and release-events and also draws
+a line or a box from the click-point to the actual mouseposition
+(within the same axes) until the button is released.  Within the
+method ‘self.ignore()’ it is checked whether the button from eventpress
+and eventrelease are the same.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>image</strong> (<em>array_like</em>) – 2D (y,x) or 3D (y,x,t) image to be analyzed.  The ROI is drawn on only
+one frame, however</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>coordinates</strong> – The vertices of the selection (x1, x2, y1, y2)</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">tuple</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 </div>
 </div>
 

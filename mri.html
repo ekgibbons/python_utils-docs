@@ -95,7 +95,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#module-mri">Module contents</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-mri.blochsequence">mri.blochsequence module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#mri-cardiac-module">mri.cardiac module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-mri.cardiac">mri.cardiac module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-mri.epg">mri.epg module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-mri.rawloadX">mri.rawloadX module</a></li>
 </ul>
@@ -180,7 +180,7 @@ raw files, simulations, etc.)</p>
 <p>Cardiac bloch simulator for the DiBella cardiac perfusion pulse sequence.  This sequence is essentially is a saturation pulse followed by a small flip angle readout during recovery.  This sequence assumes a beating heart (with the user-defined heart rate).  The output is the magnetization profiles–particularly the slice profile.</p>
 <dl class="function">
 <dt id="mri.blochsequence.CardiacSat">
-<code class="descclassname">mri.blochsequence.</code><code class="descname">CardiacSat</code><span class="sig-paren">(</span><em>arg0: float</em>, <em>arg1: int</em>, <em>arg2: int</em>, <em>arg3: float</em>, <em>arg4: float</em>, <em>arg5: float</em>, <em>arg6: int</em><span class="sig-paren">)</span> &#x2192; array<a class="headerlink" href="#mri.blochsequence.CardiacSat" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">mri.blochsequence.</code><code class="descname">CardiacSat</code><span class="sig-paren">(</span><em>sliceThickness: float</em>, <em>nValues: int</em>, <em>nExcitations: int</em>, <em>T1: float</em>, <em>T2: float</em>, <em>heartRate: float</em>, <em>returnType: int</em><span class="sig-paren">)</span> &#x2192; array<a class="headerlink" href="#mri.blochsequence.CardiacSat" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function controls the saturation pulse sequence.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -208,8 +208,28 @@ raw files, simulations, etc.)</p>
 </dd></dl>
 
 </div>
-<div class="section" id="mri-cardiac-module">
-<h2>mri.cardiac module<a class="headerlink" href="#mri-cardiac-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-mri.cardiac">
+<span id="mri-cardiac-module"></span><h2>mri.cardiac module<a class="headerlink" href="#module-mri.cardiac" title="Permalink to this headline">¶</a></h2>
+<p>Various functions related to cardiac MRI</p>
+<dl class="function">
+<dt id="mri.cardiac.ContrastFrameNumbers">
+<code class="descclassname">mri.cardiac.</code><code class="descname">ContrastFrameNumbers</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#mri.cardiac.ContrastFrameNumbers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates the frame numbers where contrast enters the blood and tissue.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>data</strong> (<em>array_like</em>) – 3D array <cite>(y, x, t)</cite> to be analyzed</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>frameNumbers</strong> – Tuple of the frame numbers <cite>(pdEnd, numPrecontrastBlood,
+numPrecontrastTissue)</cite></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">tuple (int, int, int)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 </div>
 <div class="section" id="module-mri.epg">
 <span id="mri-epg-module"></span><h2>mri.epg module<a class="headerlink" href="#module-mri.epg" title="Permalink to this headline">¶</a></h2>
