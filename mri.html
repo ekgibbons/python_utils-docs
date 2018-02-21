@@ -177,11 +177,11 @@ raw files, simulations, etc.)</p>
 </div>
 <div class="section" id="module-mri.blochsequence">
 <span id="mri-blochsequence-module"></span><h2>mri.blochsequence module<a class="headerlink" href="#module-mri.blochsequence" title="Permalink to this headline">¶</a></h2>
-<p>Cardiac bloch simulator for the DiBella cardiac perfusion pulse sequence.  This sequence is essentially is a saturation pulse followed by a small flip angle readout during recovery.  This sequence assumes a beating heart (with the user-defined heart rate).  The output is the magnetization profiles–particularly the slice profile.</p>
+<p>This is a library of various sequnces that are simulated through Bloch numerical methods.</p>
 <dl class="function">
 <dt id="mri.blochsequence.CardiacSat">
 <code class="descclassname">mri.blochsequence.</code><code class="descname">CardiacSat</code><span class="sig-paren">(</span><em>sliceThickness: float</em>, <em>nValues: int</em>, <em>nExcitations: int</em>, <em>T1: float</em>, <em>T2: float</em>, <em>heartRate: float</em>, <em>returnType: int</em><span class="sig-paren">)</span> &#x2192; array<a class="headerlink" href="#mri.blochsequence.CardiacSat" title="Permalink to this definition">¶</a></dt>
-<dd><p>This function controls the saturation pulse sequence.</p>
+<dd><p>Cardiac bloch simulator for the DiBella cardiac perfusion pulse sequence.  This sequence is essentially is a saturation pulse followed by a small flip angle readout during recovery.  This sequence assumes a beating heart (with the user-defined heart rate).  The output is the magnetization profiles–particularly the slice profile.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -193,6 +193,124 @@ raw files, simulations, etc.)</p>
 <li><strong>T1</strong> (<em>float</em>) – The T1 recovery constant in seconds</li>
 <li><strong>T2</strong> (<em>float</em>) – The T2 relaxation constant in seconds</li>
 <li><strong>heartRate</strong> (<em>float</em>) – Heart rate in beats per minute</li>
+<li><strong>returnType</strong> (<em>int</em>) – The type of magentization to return (0: echotrain, 1: Mxy, 2: Mz)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>output</strong> – The magentization signal based on what the returnType is</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">array_like</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="mri.blochsequence.FSEAlsop">
+<code class="descclassname">mri.blochsequence.</code><code class="descname">FSEAlsop</code><span class="sig-paren">(</span><em>flips: numpy.ndarray[float64], nValues: int, etl: int, initialPhase: float, T1: float, T2: float, esp: float, returnType: int</em><span class="sig-paren">)</span> &#x2192; array<a class="headerlink" href="#mri.blochsequence.FSEAlsop" title="Permalink to this definition">¶</a></dt>
+<dd><p>SS-FSE bloch simulator for the Alsop diffusion pulse sequence.  The output is the magnetization profiles–particularly the slice profile.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>flips</strong> (<em>array_like</em>) – Flip angles for every pulse in the echo train</li>
+<li><strong>nValues</strong> (<em>int</em>) – The number of isochromats to use</li>
+<li><strong>etl</strong> (<em>int</em>) – The echo train length</li>
+<li><strong>initialPhase</strong> (<em>float</em>) – The phase on the first excitation RF pulse</li>
+<li><strong>T1</strong> (<em>float</em>) – The T1 recovery constant in seconds</li>
+<li><strong>T2</strong> (<em>float</em>) – The T2 relaxation constant in seconds</li>
+<li><strong>esp</strong> (<em>float</em>) – The echo spacing in seconds</li>
+<li><strong>returnType</strong> (<em>int</em>) – The type of magentization to return (0: echotrain, 1: Mxy, 2: Mz)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>output</strong> – The magentization signal based on what the returnType is</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">array_like</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="mri.blochsequence.FSECPMG">
+<code class="descclassname">mri.blochsequence.</code><code class="descname">FSECPMG</code><span class="sig-paren">(</span><em>flips: numpy.ndarray[float64], nValues: int, etl: int, T1: float, T2: float, esp: float, returnType: int</em><span class="sig-paren">)</span> &#x2192; array<a class="headerlink" href="#mri.blochsequence.FSECPMG" title="Permalink to this definition">¶</a></dt>
+<dd><p>SS-FSE bloch simulator for the CPMG pulse sequence.  The output is the magnetization profiles–particularly the slice profile.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>flips</strong> (<em>array_like</em>) – Flip angles for every pulse in the echo train</li>
+<li><strong>nValues</strong> (<em>int</em>) – The number of isochromats to use</li>
+<li><strong>etl</strong> (<em>int</em>) – The echo train length</li>
+<li><strong>T1</strong> (<em>float</em>) – The T1 recovery constant in seconds</li>
+<li><strong>T2</strong> (<em>float</em>) – The T2 relaxation constant in seconds</li>
+<li><strong>esp</strong> (<em>float</em>) – The echo spacing in seconds</li>
+<li><strong>returnType</strong> (<em>int</em>) – The type of magentization to return (0: echotrain, 1: Mxy, 2: Mz)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>output</strong> – The magentization signal based on what the returnType is</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">array_like</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="mri.blochsequence.FSEGibbons">
+<code class="descclassname">mri.blochsequence.</code><code class="descname">FSEGibbons</code><span class="sig-paren">(</span><em>flips: numpy.ndarray[float64], nValues: int, etl: int, initialPhase: float, T1: float, T2: float, esp: float, returnType: int</em><span class="sig-paren">)</span> &#x2192; array<a class="headerlink" href="#mri.blochsequence.FSEGibbons" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cardiac bloch simulator for the ss-MGOT diffusion pulse sequence.  The output is the magnetization profiles–particularly the slice profile.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>flips</strong> (<em>array_like</em>) – Flip angles for every pulse in the echo train</li>
+<li><strong>nValues</strong> (<em>int</em>) – The number of isochromats to use</li>
+<li><strong>etl</strong> (<em>int</em>) – The echo train length</li>
+<li><strong>initialPhase</strong> (<em>float</em>) – The phase on the first excitation RF pulse</li>
+<li><strong>T1</strong> (<em>float</em>) – The T1 recovery constant in seconds</li>
+<li><strong>T2</strong> (<em>float</em>) – The T2 relaxation constant in seconds</li>
+<li><strong>esp</strong> (<em>float</em>) – The echo spacing in seconds</li>
+<li><strong>returnType</strong> (<em>int</em>) – The type of magentization to return (0: echotrain, 1: Mxy, 2: Mz)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>output</strong> – The magentization signal based on what the returnType is</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">array_like</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="mri.blochsequence.FSELRX">
+<code class="descclassname">mri.blochsequence.</code><code class="descname">FSELRX</code><span class="sig-paren">(</span><em>nValues: int</em>, <em>etl: int</em>, <em>initialPhase: float</em>, <em>T1: float</em>, <em>T2: float</em>, <em>esp: float</em>, <em>returnType: int</em><span class="sig-paren">)</span> &#x2192; array<a class="headerlink" href="#mri.blochsequence.FSELRX" title="Permalink to this definition">¶</a></dt>
+<dd><p>SS-FSE bloch simulator for the LeRoux nCPMG diffusion pulse sequence.  The output is the magnetization profiles–particularly the slice profile.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>nValues</strong> (<em>int</em>) – The number of isochromats to use</li>
+<li><strong>etl</strong> (<em>int</em>) – The echo train length</li>
+<li><strong>initialPhase</strong> (<em>float</em>) – The phase on the first excitation RF pulse</li>
+<li><strong>T1</strong> (<em>float</em>) – The T1 recovery constant in seconds</li>
+<li><strong>T2</strong> (<em>float</em>) – The T2 relaxation constant in seconds</li>
+<li><strong>esp</strong> (<em>float</em>) – The echo spacing in seconds</li>
 <li><strong>returnType</strong> (<em>int</em>) – The type of magentization to return (0: echotrain, 1: Mxy, 2: Mz)</li>
 </ul>
 </td>
