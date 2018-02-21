@@ -98,6 +98,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#module-mri.cardiac">mri.cardiac module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-mri.epg">mri.epg module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-mri.rawloadX">mri.rawloadX module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-mri.varflip">mri.varflip module</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="recon.html">recon package</a></li>
@@ -684,6 +685,22 @@ the data</td>
 </dd></dl>
 
 </div>
+<div class="section" id="module-mri.varflip">
+<span id="mri-varflip-module"></span><h2>mri.varflip module<a class="headerlink" href="#module-mri.varflip" title="Permalink to this headline">¶</a></h2>
+<p>This is a method to generate the variable flip angle schedule used in the GE FSE sequences.</p>
+<dl class="function">
+<dt id="mri.varflip.GenerateFlipsLRX">
+<code class="descclassname">mri.varflip.</code><code class="descname">GenerateFlipsLRX</code><span class="sig-paren">(</span><em>arg0: int</em><span class="sig-paren">)</span> &#x2192; array<a class="headerlink" href="#mri.varflip.GenerateFlipsLRX" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cardiac bloch simulator for the DiBella cardiac perfusion pulse sequence.  This sequence is essentially is a saturation pulse followed by a small flip angle readout during recovery.  This sequence assumes a beating heart (with the user-defined heart rate).  The output is the magnetization pr</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="mri.varflip.GenerateFlipsVar">
+<code class="descclassname">mri.varflip.</code><code class="descname">GenerateFlipsVar</code><span class="sig-paren">(</span><em>arg0: int</em>, <em>arg1: float</em>, <em>arg2: int</em>, <em>arg3: int</em>, <em>arg4: float</em>, <em>arg5: float</em>, <em>arg6: float</em>, <em>arg7: float</em>, <em>arg8: float</em>, <em>arg9: int</em><span class="sig-paren">)</span> &#x2192; array<a class="headerlink" href="#mri.varflip.GenerateFlipsVar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cardiac bloch simulator for the DiBella cardiac perfusion pulse sequence.  This sequence is essentially is a saturation pulse followed by a small flip angle readout during recovery.  This sequence assumes a beating heart (with the user-defined heart rate).  The output is the magnetization pr</p>
+</dd></dl>
+
+</div>
 </div>
 
 
@@ -709,7 +726,7 @@ the data</td>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, Eric Gibbons.
-      Last updated on Feb 20, 2018.
+      Last updated on Feb 21, 2018.
 
     </p>
   </div>
