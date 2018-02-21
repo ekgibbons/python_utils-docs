@@ -687,17 +687,69 @@ the data</td>
 </div>
 <div class="section" id="module-mri.varflip">
 <span id="mri-varflip-module"></span><h2>mri.varflip module<a class="headerlink" href="#module-mri.varflip" title="Permalink to this headline">¶</a></h2>
-<p>This is a method to generate the variable flip angle schedule used in the GE FSE sequences.</p>
+<p>This is a method to generate the variable flip angle schedule used in variable FSE (TSE or RARE) pulse sequences.</p>
 <dl class="function">
 <dt id="mri.varflip.GenerateFlipsLRX">
-<code class="descclassname">mri.varflip.</code><code class="descname">GenerateFlipsLRX</code><span class="sig-paren">(</span><em>arg0: int</em><span class="sig-paren">)</span> &#x2192; array<a class="headerlink" href="#mri.varflip.GenerateFlipsLRX" title="Permalink to this definition">¶</a></dt>
-<dd><p>Cardiac bloch simulator for the DiBella cardiac perfusion pulse sequence.  This sequence is essentially is a saturation pulse followed by a small flip angle readout during recovery.  This sequence assumes a beating heart (with the user-defined heart rate).  The output is the magnetization pr</p>
+<code class="descclassname">mri.varflip.</code><code class="descname">GenerateFlipsLRX</code><span class="sig-paren">(</span><em>etl: int</em><span class="sig-paren">)</span> &#x2192; array<a class="headerlink" href="#mri.varflip.GenerateFlipsLRX" title="Permalink to this definition">¶</a></dt>
+<dd><p>Variable flip angle calculation for constant low flip angle based on the LeRoux method.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>etl</strong> (<em>int</em>) – Echo train length</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>flipsVar</strong> – Flip angles in array length of echo train length (in degrees)</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">array_like</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">References</p>
+<table class="docutils footnote" frame="void" id="id1" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[1]</td><td>Roux, Patrick Le, and R. Scott Hinks. “Stabilization of echo amplitudes in FSE sequences.” Magnetic resonance in medicine 30.2 (1993): 183-190.</td></tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="function">
 <dt id="mri.varflip.GenerateFlipsVar">
-<code class="descclassname">mri.varflip.</code><code class="descname">GenerateFlipsVar</code><span class="sig-paren">(</span><em>arg0: int</em>, <em>arg1: float</em>, <em>arg2: int</em>, <em>arg3: int</em>, <em>arg4: float</em>, <em>arg5: float</em>, <em>arg6: float</em>, <em>arg7: float</em>, <em>arg8: float</em>, <em>arg9: int</em><span class="sig-paren">)</span> &#x2192; array<a class="headerlink" href="#mri.varflip.GenerateFlipsVar" title="Permalink to this definition">¶</a></dt>
-<dd><p>Cardiac bloch simulator for the DiBella cardiac perfusion pulse sequence.  This sequence is essentially is a saturation pulse followed by a small flip angle readout during recovery.  This sequence assumes a beating heart (with the user-defined heart rate).  The output is the magnetization pr</p>
+<code class="descclassname">mri.varflip.</code><code class="descname">GenerateFlipsVar</code><span class="sig-paren">(</span><em>etl: int</em>, <em>esp: float</em>, <em>nMin: int=6</em>, <em>nLope: int=12</em>, <em>flipFirst: float=120.0</em>, <em>flipMin: float=35.0</em>, <em>flipLope: float=35.0</em>, <em>flipLast: float=120.0</em>, <em>flipMax: float=120.0</em>, <em>dbgFlag: int=0</em><span class="sig-paren">)</span> &#x2192; array<a class="headerlink" href="#mri.varflip.GenerateFlipsVar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Variable flip angle calculation based on the GE pulse sequence code.  Originally written by Busse in C, but wrapped in python here.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>etl</strong> (<em>int</em>) – Echo train length</li>
+<li><strong>esp</strong> (<em>float</em>) – Echo spacing (in seconds)</li>
+<li><strong>nMin</strong> (<em>int</em>) – Echo number for the minimum flip angle</li>
+<li><strong>nLope</strong> (<em>int</em>) – Echo number for central k-space</li>
+<li><strong>flipFirst</strong> (<em>float</em>) – Flip angle for first RF pulse (in degrees)</li>
+<li><strong>flipMin</strong> (<em>float</em>) – Minimum flip angle for the pulse sequence (in degrees)</li>
+<li><strong>flipLope</strong> (<em>float</em>) – Flip angle for crossing central k-space (in degrees)</li>
+<li><strong>flipLast</strong> (<em>float</em>) – Flip angle for the last RF pulse (in degrees)</li>
+<li><strong>flipMax</strong> (<em>float</em>) – Maximum flip angle in echo train (in degrees)</li>
+<li><strong>dbgFlag</strong> (<em>int</em>) – Debug flag</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>flipsVar</strong> – Flip angles used in echo train (in degrees)</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">array_like</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">References</p>
+<table class="docutils footnote" frame="void" id="id2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[1]</td><td>Busse, Reed F., et al. “Fast spin echo sequences with very long echo trains: design of variable refocusing flip angle schedules and generation of clinical T2 contrast.” Magnetic resonance in medicine 55.5 (2006): 1030-1037.</td></tr>
+</tbody>
+</table>
 </dd></dl>
 
 </div>
