@@ -349,6 +349,37 @@ occurring on third dimension</li>
 </dd></dl>
 
 <dl class="function">
+<dt id="recon.imtools.Register2DModel">
+<code class="descclassname">recon.imtools.</code><code class="descname">Register2DModel</code><span class="sig-paren">(</span><em>data</em>, <em>numPrecontrastBlood=5</em>, <em>numPrecontrastTissue=7</em>, <em>numProtonDensity=10</em>, <em>sliceCheck=4</em>, <em>frameCheck=31</em><span class="sig-paren">)</span><a class="headerlink" href="#recon.imtools.Register2DModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is a wrapper for the matlab implentation
+of 2D registration for 4D perfusion datasets.  This relies on
+the physiological model to handle the contrast changes from
+frame to frame.  It uses a spline deformable model on the
+backend.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>data</strong> (<em>array_like</em>) – Unregistered 4D data to be registered in the (y, x, t, z)
+format (while data is 4D, registration happens only in 2D)</li>
+<li><strong>numPrecontrastBlood</strong> (<em>int</em>) – Number of pre contrast blood images</li>
+<li><strong>numPrecontrastTissue</strong> (<em>int</em>) – Number of pre contrast tissue images</li>
+<li><strong>numProtonDensity</strong> (<em>int</em>) – Number of proton density images</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>dataReg</strong> – Registered data array (4D)</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">array_like</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
 <dt id="recon.imtools.Register3D">
 <code class="descclassname">recon.imtools.</code><code class="descname">Register3D</code><span class="sig-paren">(</span><em>data</em>, <em>regType='SyNRA'</em>, <em>verbose=True</em><span class="sig-paren">)</span><a class="headerlink" href="#recon.imtools.Register3D" title="Permalink to this definition">¶</a></dt>
 <dd><p>This is a 3D registration for a stack of images using
@@ -482,7 +513,7 @@ modified if it falls out of range</li>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, Eric Gibbons.
-      Last updated on Feb 20, 2018.
+      Last updated on Feb 27, 2018.
 
     </p>
   </div>

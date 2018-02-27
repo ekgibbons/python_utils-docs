@@ -98,6 +98,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#module-mri.cardiac">mri.cardiac module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-mri.epg">mri.epg module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-mri.rawloadX">mri.rawloadX module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-mri.study">mri.study module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-mri.varflip">mri.varflip module</a></li>
 </ul>
 </li>
@@ -685,6 +686,76 @@ the data</td>
 </dd></dl>
 
 </div>
+<div class="section" id="module-mri.study">
+<span id="mri-study-module"></span><h2>mri.study module<a class="headerlink" href="#module-mri.study" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="mri.study.GetStudy">
+<em class="property">class </em><code class="descclassname">mri.study.</code><code class="descname">GetStudy</code><span class="sig-paren">(</span><em>studyNumber=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mri.study.GetStudy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This class initiates an object that will read in the study
+information file and returns the appropriate data in a clean
+fashion.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>studyNumber</strong> (<em>str</em><em> (</em><em>optional</em><em>)</em>) – The number of the study in the DiBella format (“P—–”).
+If nothing is passed then it will list the 2D and 3D file
+numbers.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="mri.study.GetStudy.RawData">
+<code class="descname">RawData</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mri.study.GetStudy.RawData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the raw data in python form.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>dataRaw</strong> – The data pre-registration</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">array_like</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mri.study.GetStudy.RegisteredData">
+<code class="descname">RegisteredData</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mri.study.GetStudy.RegisteredData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the registered data in python form.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>dataReg</strong> – The data after registration</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">array_like</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mri.study.GetStudy.TimePoints">
+<code class="descname">TimePoints</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mri.study.GetStudy.TimePoints" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the time points for the acquisition.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>timePoints</strong> – The time points in a 1D array</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">array_like</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
 <div class="section" id="module-mri.varflip">
 <span id="mri-varflip-module"></span><h2>mri.varflip module<a class="headerlink" href="#module-mri.varflip" title="Permalink to this headline">¶</a></h2>
 <p>This is a method to generate the variable flip angle schedule used in variable FSE (TSE or RARE) pulse sequences.</p>
@@ -778,7 +849,7 @@ the data</td>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, Eric Gibbons.
-      Last updated on Feb 21, 2018.
+      Last updated on Feb 27, 2018.
 
     </p>
   </div>
