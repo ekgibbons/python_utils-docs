@@ -17,42 +17,36 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="python_utils 0.1.1 documentation" href="index.html"/>
-        <link rel="next" title="utils package" href="utils.html"/>
-        <link rel="prev" title="mri package" href="mri.html"/> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="utils package" href="utils.html" />
+    <link rel="prev" title="mri package" href="mri.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -98,7 +92,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#module-recon.fftc">recon.fftc module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-recon.imtools">recon.imtools module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-recon.sos">recon.sos module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-recon.tempinterp">recon.tempinterp module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#recon-tempinterp-module">recon.tempinterp module</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="utils.html">utils package</a></li>
@@ -113,7 +107,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">python_utils</a>
@@ -121,9 +115,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -181,84 +176,74 @@
 <dt id="recon.fftc.fft2c">
 <code class="descclassname">recon.fftc.</code><code class="descname">fft2c</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#recon.fftc.fft2c" title="Permalink to this definition">¶</a></dt>
 <dd><p>Centered FFT in two dimensions (dim0, dim1).  All other dimensions are left alone.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>data</strong> (<em>array_like</em>) – The input to the FFT, must be 2D</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>dim1</strong> – Output from the FFT</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">array_like</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> (<em>array_like</em>) – The input to the FFT, must be 2D</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>dim1</strong> – Output from the FFT</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array_like</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="function">
 <dt id="recon.fftc.fftc">
 <code class="descclassname">recon.fftc.</code><code class="descname">fftc</code><span class="sig-paren">(</span><em>data</em>, <em>dim</em><span class="sig-paren">)</span><a class="headerlink" href="#recon.fftc.fftc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Centered FFT.  User specifies the dimension of the transform.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>data</strong> (<em>array_like</em>) – The input to the FFT</li>
-<li><strong>dim</strong> (<em>int</em>) – The dimension to take the FFT</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>array_like</em>) – The input to the FFT</p></li>
+<li><p><strong>dim</strong> (<em>int</em>) – The dimension to take the FFT</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>Result</strong> – The result of the FFT</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">array_like</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>Result</strong> – The result of the FFT</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array_like</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="function">
 <dt id="recon.fftc.ifft2c">
 <code class="descclassname">recon.fftc.</code><code class="descname">ifft2c</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#recon.fftc.ifft2c" title="Permalink to this definition">¶</a></dt>
 <dd><p>Centered iFFT in two dimensions (dim0, dim1).  All other dimensions are left alone.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>data</strong> (<em>array_like</em>) – The input to the iFFT, must be 2D</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>dim1</strong> – Output from the iFFT</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">array_like</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> (<em>array_like</em>) – The input to the iFFT, must be 2D</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>dim1</strong> – Output from the iFFT</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array_like</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="function">
 <dt id="recon.fftc.ifftc">
 <code class="descclassname">recon.fftc.</code><code class="descname">ifftc</code><span class="sig-paren">(</span><em>data</em>, <em>dim</em><span class="sig-paren">)</span><a class="headerlink" href="#recon.fftc.ifftc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Centered iFFT.  User specifies the dimension of the transform.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>data</strong> (<em>array_like</em>) – The input to the iFFT</li>
-<li><strong>dim</strong> (<em>int</em>) – The dimension to take the iFFT</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>array_like</em>) – The input to the iFFT</p></li>
+<li><p><strong>dim</strong> (<em>int</em>) – The dimension to take the iFFT</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>Result</strong> – The result of the iFFT</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">array_like</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>Result</strong> – The result of the iFFT</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array_like</p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -268,30 +253,31 @@
 includes basic sinc interpolation, image cropping, zeropadding,
 and registration.</p>
 <dl class="function">
-<dt id="recon.imtools.Crop">
-<code class="descclassname">recon.imtools.</code><code class="descname">Crop</code><span class="sig-paren">(</span><em>im</em>, <em>cropy</em>, <em>cropx</em><span class="sig-paren">)</span><a class="headerlink" href="#recon.imtools.Crop" title="Permalink to this definition">¶</a></dt>
-<dd><p>Crops or pads image to the specified dimensions.  This assums
-that the original is up to 4D (dim0, dim1, dim2, dim3) and crops in
-dim0 and dim1.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>im</strong> (<em>array_like</em>) – Array to be cropped.  Can be up to 4D</li>
-<li><strong>cropy</strong> (<em>int</em>) – Extent of cropping in dim0</li>
-<li><strong>cropx</strong> (<em>int</em>) – Extent of cropping in dim1</li>
+<dt id="recon.imtools.AddRician">
+<code class="descclassname">recon.imtools.</code><code class="descname">AddRician</code><span class="sig-paren">(</span><em>v</em>, <em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#recon.imtools.AddRician" title="Permalink to this definition">¶</a></dt>
+<dd><p>r = ricernd(v, s) returns random sample(s) from the Rice (aka Rician)
+distribution with parameters v and s.
+(either v or s may be arrays, if both are, they must match in size)</p>
+<p>R ~ Rice(v, s) if R = sqrt(X^2 + Y^2), where X ~ N(v*cos(a), s^2) and
+Y ~ N(v*sin(a), s^2) are independent normal distributions (any real a).
+Note that v and s are <em>not</em> the mean and standard deviation of R!</p>
+<p>The size of Y is the common size of the input arguments.  A scalar
+input functions as a constant matrix of the same size as the other
+inputs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>v</strong> (<em>array_like</em>) – Array to add noise to</p></li>
+<li><p><strong>s</strong> (<em>float</em>) – The Rician noise parameter</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>im</strong> – Output image</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">array_like</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>imOut</strong> – Magnitude image with Rician noise</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array_like</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="function">
@@ -299,26 +285,22 @@ dim0 and dim1.</p>
 <code class="descclassname">recon.imtools.</code><code class="descname">Interpolate</code><span class="sig-paren">(</span><em>im</em>, <em>cropy</em>, <em>cropx</em><span class="sig-paren">)</span><a class="headerlink" href="#recon.imtools.Interpolate" title="Permalink to this definition">¶</a></dt>
 <dd><p>This is sinc interpolation (in Fourier domain) along the
 first two dimensions of an array.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>im</strong> (<em>Input image</em>) – Image to be interpolated.  Can be complex or real and
-can have up to four dimensions</li>
-<li><strong>cropy</strong> (<em>int</em>) – The extent of interpolation in y (first dimension)</li>
-<li><strong>cropx</strong> (<em>int</em>) – The extent of interpolation in x (second dimension)</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>im</strong> (<em>Input image</em>) – Image to be interpolated.  Can be complex or real and
+can have up to four dimensions</p></li>
+<li><p><strong>cropy</strong> (<em>int</em>) – The extent of interpolation in y (first dimension)</p></li>
+<li><p><strong>cropx</strong> (<em>int</em>) – The extent of interpolation in x (second dimension)</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>im</strong> – Interpolated array</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">array_like</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>im</strong> – Interpolated array</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array_like</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="function">
@@ -326,26 +308,22 @@ can have up to four dimensions</li>
 <code class="descclassname">recon.imtools.</code><code class="descname">Register2D</code><span class="sig-paren">(</span><em>data</em>, <em>regType='SyNRA'</em>, <em>verbose=True</em><span class="sig-paren">)</span><a class="headerlink" href="#recon.imtools.Register2D" title="Permalink to this definition">¶</a></dt>
 <dd><p>This is a 2D registration for a stack of images using
 ANTs</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>data</strong> (<em>array_like</em>) – A stack of 2D images in a 3D array, with registration
-occurring on third dimension</li>
-<li><strong>regType</strong> (<em>str</em>) – Description of ANTs registration</li>
-<li><strong>verbose</strong> (<em>bool</em>) – Verbose output</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>array_like</em>) – A stack of 2D images in a 3D array, with registration
+occurring on third dimension</p></li>
+<li><p><strong>regType</strong> (<em>str</em>) – Description of ANTs registration</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em>) – Verbose output</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>dataReg</strong> – Array of 2D images that have been registered</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">array_like</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>dataReg</strong> – Array of 2D images that have been registered</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array_like</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="function">
@@ -356,27 +334,23 @@ of 2D registration for 4D perfusion datasets.  This relies on
 the physiological model to handle the contrast changes from
 frame to frame.  It uses a spline deformable model on the
 backend.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>data</strong> (<em>array_like</em>) – Unregistered 4D data to be registered in the (y, x, t, z)
-format (while data is 4D, registration happens only in 2D)</li>
-<li><strong>numPrecontrastBlood</strong> (<em>int</em>) – Number of pre contrast blood images</li>
-<li><strong>numPrecontrastTissue</strong> (<em>int</em>) – Number of pre contrast tissue images</li>
-<li><strong>numProtonDensity</strong> (<em>int</em>) – Number of proton density images</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>array_like</em>) – Unregistered 4D data to be registered in the (y, x, t, z)
+format (while data is 4D, registration happens only in 2D)</p></li>
+<li><p><strong>numPrecontrastBlood</strong> (<em>int</em>) – Number of pre contrast blood images</p></li>
+<li><p><strong>numPrecontrastTissue</strong> (<em>int</em>) – Number of pre contrast tissue images</p></li>
+<li><p><strong>numProtonDensity</strong> (<em>int</em>) – Number of proton density images</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>dataReg</strong> – Registered data array (4D)</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">array_like</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>dataReg</strong> – Registered data array (4D)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array_like</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="function">
@@ -384,26 +358,22 @@ format (while data is 4D, registration happens only in 2D)</li>
 <code class="descclassname">recon.imtools.</code><code class="descname">Register3D</code><span class="sig-paren">(</span><em>data</em>, <em>regType='SyNRA'</em>, <em>verbose=True</em><span class="sig-paren">)</span><a class="headerlink" href="#recon.imtools.Register3D" title="Permalink to this definition">¶</a></dt>
 <dd><p>This is a 3D registration for a stack of images using
 ANTs</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>data</strong> (<em>array_like</em>) – A stack of 3D images in a 4D array, with registration
-occurring on third dimension</li>
-<li><strong>regType</strong> (<em>str</em>) – Description of ANTs registration</li>
-<li><strong>verbose</strong> (<em>bool</em>) – Verbose output</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>array_like</em>) – A stack of 3D images in a 4D array, with registration
+occurring on third dimension</p></li>
+<li><p><strong>regType</strong> (<em>str</em>) – Description of ANTs registration</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em>) – Verbose output</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>dataReg</strong> – Array of 3D images that have been registered</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">array_like</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>dataReg</strong> – Array of 3D images that have been registered</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array_like</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="function">
@@ -414,27 +384,46 @@ of 3D registration for 4D perfusion datasets.  This relies on
 the physiological model to handle the contrast changes from
 frame to frame.  It uses a spline deformable model on the
 backend.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>data</strong> (<em>array_like</em>) – Unregistered 4D data to be registered in the (y, x, t, z)
-format</li>
-<li><strong>numPrecontrastBlood</strong> (<em>int</em>) – Number of pre contrast blood images</li>
-<li><strong>numPrecontrastTissue</strong> (<em>int</em>) – Number of pre contrast tissue images</li>
-<li><strong>numProtonDensity</strong> (<em>int</em>) – Number of proton density images</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>array_like</em>) – Unregistered 4D data to be registered in the (y, x, t, z)
+format</p></li>
+<li><p><strong>numPrecontrastBlood</strong> (<em>int</em>) – Number of pre contrast blood images</p></li>
+<li><p><strong>numPrecontrastTissue</strong> (<em>int</em>) – Number of pre contrast tissue images</p></li>
+<li><p><strong>numProtonDensity</strong> (<em>int</em>) – Number of proton density images</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>dataReg</strong> – Registered data array (4D)</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">array_like</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>dataReg</strong> – Registered data array (4D)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array_like</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="recon.imtools.crop">
+<code class="descclassname">recon.imtools.</code><code class="descname">crop</code><span class="sig-paren">(</span><em>im</em>, <em>cropy</em>, <em>cropx</em><span class="sig-paren">)</span><a class="headerlink" href="#recon.imtools.crop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Crops or pads image to the specified dimensions.  This assums
+that the original is up to 4D (dim0, dim1, dim2, dim3) and crops in
+dim0 and dim1.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>im</strong> (<em>array_like</em>) – Array to be cropped.  Can be up to 4D</p></li>
+<li><p><strong>cropy</strong> (<em>int</em>) – Extent of cropping in dim0</p></li>
+<li><p><strong>cropx</strong> (<em>int</em>) – Extent of cropping in dim1</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>im</strong> – Output image</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array_like</p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -448,53 +437,14 @@ format</li>
 </dd></dl>
 
 </div>
-<div class="section" id="module-recon.tempinterp">
-<span id="recon-tempinterp-module"></span><h2>recon.tempinterp module<a class="headerlink" href="#module-recon.tempinterp" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="recon.tempinterp.InterpolateSepConv">
-<code class="descclassname">recon.tempinterp.</code><code class="descname">InterpolateSepConv</code><span class="sig-paren">(</span><em>dataIn</em><span class="sig-paren">)</span><a class="headerlink" href="#recon.tempinterp.InterpolateSepConv" title="Permalink to this definition">¶</a></dt>
-<dd><p>Note:  “ordering” refers to which frames are given,
-assuming we are counting from 0 in our indexing.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="recon.tempinterp.InterpolateSpline">
-<code class="descclassname">recon.tempinterp.</code><code class="descname">InterpolateSpline</code><span class="sig-paren">(</span><em>data</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#recon.tempinterp.InterpolateSpline" title="Permalink to this definition">¶</a></dt>
-<dd><p>Temporal interpolation using splines.  Input array will be
-(y, x, t).</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>data</strong> (<em>array_like</em>) – Data to be interpolated.  Should be (y, x, t)</li>
-<li><strong>inputTiming</strong> (<em>array_like</em><em>, </em><em>optional</em>) – 1D array of the temporal locations of the input data</li>
-<li><strong>outputTiming</strong> (<em>array_like</em><em>, </em><em>optional</em>) – 1D array of the locations where the interpolation should happen</li>
-<li><strong>interpKind</strong> (<em>str</em><em>, </em><em>optional</em>) – What type of interpolation (based on <cite>scipy.interpolate.interp1d</cite>)</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
-<li><strong>dataInterpolate</strong> (<em>array_like</em>) – Interpolated data</li>
-<li><strong>outputTiming</strong> (<em>array_like</em>) – The timing used for the interpolation.  Most of the time this is the
-same as the output timing given passed as an argument, but can be
-modified if it falls out of range</li>
-</ul>
-</p>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
+<div class="section" id="recon-tempinterp-module">
+<h2>recon.tempinterp module<a class="headerlink" href="#recon-tempinterp-module" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -503,7 +453,7 @@ modified if it falls out of range</li>
         <a href="utils.html" class="btn btn-neutral float-right" title="utils package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="mri.html" class="btn btn-neutral" title="mri package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="mri.html" class="btn btn-neutral float-left" title="mri package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -512,12 +462,14 @@ modified if it falls out of range</li>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, Eric Gibbons.
-      Last updated on Feb 27, 2018.
+        &copy; Copyright 2018, Eric Gibbons
+      <span class="lastupdated">
+        Last updated on Apr 04, 2019.
+      </span>
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -530,36 +482,15 @@ modified if it falls out of range</li>
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'0.1.1',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>

@@ -17,41 +17,35 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="python_utils 0.1.1 documentation" href="index.html"/>
-        <link rel="prev" title="recon package" href="recon.html"/> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="recon package" href="recon.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -113,7 +107,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">python_utils</a>
@@ -121,9 +115,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -180,92 +175,97 @@
 work is based on matplotlib, but provides more convenient
 wrappers.</p>
 <dl class="function">
-<dt id="utils.display.Gif">
-<code class="descclassname">utils.display.</code><code class="descname">Gif</code><span class="sig-paren">(</span><em>data</em>, <em>fileName</em>, <em>dpi=80</em>, <em>interval=100</em><span class="sig-paren">)</span><a class="headerlink" href="#utils.display.Gif" title="Permalink to this definition">¶</a></dt>
-<dd><p>This function will take an array with a temporal
-dimension (y, x, t) and save an animated gif.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>data</strong> (<em>array_like</em>) – The input data array (y, x, t)</li>
-<li><strong>fileName</strong> (<em>str</em>) – The input file name</li>
-<li><strong>dpi</strong> (<em>int</em>) – The saved image DPI</li>
-<li><strong>interval</strong> (<em>int</em>) – The frame rate interval</li>
+<dt id="utils.display.get_color">
+<code class="descclassname">utils.display.</code><code class="descname">get_color</code><span class="sig-paren">(</span><em>name</em>, <em>tuple_type=True</em><span class="sig-paren">)</span><a class="headerlink" href="#utils.display.get_color" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the RGBa values in array for plot colors using
+the solarized pallette.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Color name</p></li>
+<li><p><strong>tuple_type</strong> (<em>bool</em>) – Whether or not to return a tuple or array</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>color_rgb</strong> – Color RGBa value in array form</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array_like</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="function">
-<dt id="utils.display.ImMovie">
-<code class="descclassname">utils.display.</code><code class="descname">ImMovie</code><span class="sig-paren">(</span><em>data</em>, <em>duration=0.05</em>, <em>cm='gray'</em><span class="sig-paren">)</span><a class="headerlink" href="#utils.display.ImMovie" title="Permalink to this definition">¶</a></dt>
+<dt id="utils.display.gif">
+<code class="descclassname">utils.display.</code><code class="descname">gif</code><span class="sig-paren">(</span><em>data</em>, <em>file_name</em>, <em>dpi=80</em>, <em>interval=100</em><span class="sig-paren">)</span><a class="headerlink" href="#utils.display.gif" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function will take an array with a temporal
+dimension (y, x, t) and save an animated gif.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>array_like</em>) – The input data array (y, x, t)</p></li>
+<li><p><strong>file_name</strong> (<em>str</em>) – The input file name</p></li>
+<li><p><strong>dpi</strong> (<em>int</em>) – The saved image DPI</p></li>
+<li><p><strong>interval</strong> (<em>int</em>) – The frame rate interval</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="utils.display.im_movie">
+<code class="descclassname">utils.display.</code><code class="descname">im_movie</code><span class="sig-paren">(</span><em>data</em>, <em>duration=0.05</em>, <em>cm='gray'</em><span class="sig-paren">)</span><a class="headerlink" href="#utils.display.im_movie" title="Permalink to this definition">¶</a></dt>
 <dd><p>Takes a 3D array (y, x, t) and displays the data as movie.</p>
 <p>Note:  this still needs to call the <cite>plt.show()</cite> command after
 running this command to get the stuff to display.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>data</strong> (<em>array_like</em>) – 3D array to be displayed (y, x, t)</li>
-<li><strong>duration</strong> (<em>float</em>) – Duration of pause between frames</li>
-<li><strong>cm</strong> (<em>str</em>) – Colormap type</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>array_like</em>) – 3D array to be displayed (y, x, t)</p></li>
+<li><p><strong>duration</strong> (<em>float</em>) – Duration of pause between frames</p></li>
+<li><p><strong>cm</strong> (<em>str</em>) – Colormap type</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="function">
-<dt id="utils.display.Render">
-<code class="descclassname">utils.display.</code><code class="descname">Render</code><span class="sig-paren">(</span><em>X</em>, <em>colormap='gray'</em>, <em>vmax=None</em>, <em>vmin=None</em><span class="sig-paren">)</span><a class="headerlink" href="#utils.display.Render" title="Permalink to this definition">¶</a></dt>
+<dt id="utils.display.render">
+<code class="descclassname">utils.display.</code><code class="descname">render</code><span class="sig-paren">(</span><em>X</em>, <em>colormap='gray'</em>, <em>vmax=None</em>, <em>vmin=None</em><span class="sig-paren">)</span><a class="headerlink" href="#utils.display.render" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function takes a 3D array <code class="docutils literal notranslate"><span class="pre">X</span></code> and creates
 a tiled montage image.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>X</strong> (<em>array_like</em>) – 3D array (y, x, z)</li>
-<li><strong>colormap</strong> (<em>str</em>) – Colormap to be used</li>
-<li><strong>vmax</strong> (<em>float</em>) – Maximum value in display</li>
-<li><strong>vmin</strong> (<em>float</em>) – Minimum value in display</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>X</strong> (<em>array_like</em>) – 3D array (y, x, z)</p></li>
+<li><p><strong>colormap</strong> (<em>str</em>) – Colormap to be used</p></li>
+<li><p><strong>vmax</strong> (<em>float</em>) – Maximum value in display</p></li>
+<li><p><strong>vmin</strong> (<em>float</em>) – Minimum value in display</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="function">
-<dt id="utils.display.SaveImage">
-<code class="descclassname">utils.display.</code><code class="descname">SaveImage</code><span class="sig-paren">(</span><em>data</em>, <em>cm</em>, <em>fn</em><span class="sig-paren">)</span><a class="headerlink" href="#utils.display.SaveImage" title="Permalink to this definition">¶</a></dt>
+<dt id="utils.display.save_image">
+<code class="descclassname">utils.display.</code><code class="descname">save_image</code><span class="sig-paren">(</span><em>data</em>, <em>cm</em>, <em>fn</em><span class="sig-paren">)</span><a class="headerlink" href="#utils.display.save_image" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function tries to save the image without
 borders for publication purposes.  (Not sure if it
 works.)</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>data</strong> (<em>array_like</em>) – The image to be displayed</li>
-<li><strong>cm</strong> (<em>str</em>) – The colormap to be used</li>
-<li><strong>fn</strong> (<em>str</em>) – The saved image filename</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>array_like</em>) – The image to be displayed</p></li>
+<li><p><strong>cm</strong> (<em>str</em>) – The colormap to be used</p></li>
+<li><p><strong>fn</strong> (<em>str</em>) – The saved image filename</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="function">
-<dt id="utils.display.SetPlot">
-<code class="descclassname">utils.display.</code><code class="descname">SetPlot</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#utils.display.SetPlot" title="Permalink to this definition">¶</a></dt>
+<dt id="utils.display.set_plot">
+<code class="descclassname">utils.display.</code><code class="descname">set_plot</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#utils.display.set_plot" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function will generate figures with properly thick
 lines and large fonts.</p>
 </dd></dl>
@@ -274,31 +274,27 @@ lines and large fonts.</p>
 <div class="section" id="module-utils.matutils">
 <span id="utils-matutils-module"></span><h2>utils.matutils module<a class="headerlink" href="#module-utils.matutils" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
-<dt id="utils.matutils.MatReader">
-<code class="descclassname">utils.matutils.</code><code class="descname">MatReader</code><span class="sig-paren">(</span><em>filename</em>, <em>keyName=None</em>, <em>memberName=None</em>, <em>verbose=False</em>, <em>save=False</em><span class="sig-paren">)</span><a class="headerlink" href="#utils.matutils.MatReader" title="Permalink to this definition">¶</a></dt>
+<dt id="utils.matutils.matreader">
+<code class="descclassname">utils.matutils.</code><code class="descname">matreader</code><span class="sig-paren">(</span><em>filename</em>, <em>keyName=None</em>, <em>memberName=None</em>, <em>verbose=False</em>, <em>save=False</em><span class="sig-paren">)</span><a class="headerlink" href="#utils.matutils.matreader" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reader for matlab .mat files.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>filename</strong> (<em>str</em>) – Name of mat file being read</li>
-<li><strong>keyName</strong> (<em>str</em><em>, </em><em>optional</em>) – Name of the key that you are reading in</li>
-<li><strong>memberName</strong> (<em>str</em><em>, </em><em>optional</em>) – Name of the member if the underlining object is a Matlab
-struct</li>
-<li><strong>verbose</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether or not you want verbose output</li>
-<li><strong>save</strong> (<em>bool</em><em>, </em><em>optional</em>) – Option to save the file to a numpy file</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filename</strong> (<em>str</em>) – Name of mat file being read</p></li>
+<li><p><strong>keyName</strong> (<em>str</em><em>, </em><em>optional</em>) – Name of the key that you are reading in</p></li>
+<li><p><strong>memberName</strong> (<em>str</em><em>, </em><em>optional</em>) – Name of the member if the underlining object is a Matlab
+struct</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether or not you want verbose output</p></li>
+<li><p><strong>save</strong> (<em>bool</em><em>, </em><em>optional</em>) – Option to save the file to a numpy file</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>data</strong> – The data from the mat file in some form of numpy array</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">array_like</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>data</strong> – The data from the mat file in some form of numpy array</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array_like</p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -312,36 +308,34 @@ different location and create an identical tree at
 a different location.  These are controlled by the
 <code class="docutils literal notranslate"><span class="pre">names</span></code> variable, which is a dictionary that is
 hardcoded at the moment.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>pathName</strong> (<em>str</em>) – The path to the folder that you want to relocate</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>pathName</strong> – The new folder full path</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">str</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pathName</strong> (<em>str</em>) – The path to the folder that you want to relocate</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>pathName</strong> – The new folder full path</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="function">
 <dt id="utils.mkdir.GetPatientNumber">
 <code class="descclassname">utils.mkdir.</code><code class="descname">GetPatientNumber</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#utils.mkdir.GetPatientNumber" title="Permalink to this definition">¶</a></dt>
 <dd><p>Takes the path name form the DiBella pathname convention.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>path</strong> (<em>str</em>) – The path to be analyzed</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>patientNumber</strong> – The patient number</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">str</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>path</strong> (<em>str</em>) – The path to be analyzed</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>patientNumber</strong> – The patient number</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -352,24 +346,20 @@ hardcoded at the moment.</p>
 <code class="descclassname">utils.readhd5.</code><code class="descname">ReadHDF5</code><span class="sig-paren">(</span><em>fileName</em>, <em>varName</em><span class="sig-paren">)</span><a class="headerlink" href="#utils.readhd5.ReadHDF5" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read HDF5 file with some variable name
 as a dictionary key.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>fileName</strong> (<em>str</em>) – The hdf5 file name</li>
-<li><strong>varName</strong> (<em>str</em>) – The hdf5 dictionary key name</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fileName</strong> (<em>str</em>) – The hdf5 file name</p></li>
+<li><p><strong>varName</strong> (<em>str</em>) – The hdf5 dictionary key name</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>data</strong> – The data returned in a numpy array</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">array_like</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>data</strong> – The data returned in a numpy array</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array_like</p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -386,26 +376,22 @@ pixels of interest and 0’s are not), find the mean value.</p>
 scalar, but a temporal dimension can also be added.  In that case,
 the same ROI is used at each time frame, and the output is given
 as a 1D array.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>data</strong> (<em>array_like</em>) – 2D (y,x) or 3D (y,x,t) data array</li>
-<li><strong>mask</strong> (<em>array_like</em>) – 2D (y,x) array of 1’s and 0’s, pixels of 1’s are the pixels
-that are ultimately counted in the mean</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>array_like</em>) – 2D (y,x) or 3D (y,x,t) data array</p></li>
+<li><p><strong>mask</strong> (<em>array_like</em>) – 2D (y,x) array of 1’s and 0’s, pixels of 1’s are the pixels
+that are ultimately counted in the mean</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>meanValues</strong> – Array of mean values if the input is 3D (temporal), a float is
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>meanValues</strong> – Array of mean values if the input is 3D (temporal), a float is
 given it is strictly 2D</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">array_like (or float)</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array_like (or float)</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="class">
@@ -420,49 +406,40 @@ values.</p>
 2.  Press the ‘esc’ key to start a new polygon.
 3.  Try holding the ‘shift’ key to move all of the vertices.
 4.  Try holding the ‘ctrl’ key to move a single vertex.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>data</strong> (<em>array_like</em>) – Image data to be analyzed.  Can be 2D (y,x) or 3D (y,x,t).
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>array_like</em>) – Image data to be analyzed.  Can be 2D (y,x) or 3D (y,x,t).
 The ROI is selected from a single frame and is applied to all
-time images subsequently</li>
-<li><strong>zMiddle</strong> (<em>int</em>) – The time frame to be used if the image is 3D</li>
+time images subsequently</p></li>
+<li><p><strong>zMiddle</strong> (<em>int</em>) – The time frame to be used if the image is 3D</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <dl class="method">
 <dt id="utils.roiselector.PolygonSelect.DisplayROI">
 <code class="descname">DisplayROI</code><span class="sig-paren">(</span><em>saveName=None</em><span class="sig-paren">)</span><a class="headerlink" href="#utils.roiselector.PolygonSelect.DisplayROI" title="Permalink to this definition">¶</a></dt>
 <dd><p>Displays the ROI overlayed on top of the image used for the
 selection.  Not displayed until <cite>plt.show()</cite> is called.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>saveName</strong> (<em>str</em>) – The filename of the figure being saved</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>saveName</strong> (<em>str</em>) – The filename of the figure being saved</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="utils.roiselector.PolygonSelect.GenerateMask">
 <code class="descname">GenerateMask</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#utils.roiselector.PolygonSelect.GenerateMask" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generates a 2D (x,y) mask from the selected ROI.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>mask</strong> – Mask (y,x) of the selected ROI in 1’s (selection) and 0’s (not-selected)</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">array_like</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>mask</strong> – Mask (y,x) of the selected ROI in 1’s (selection) and 0’s (not-selected)</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>array_like</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
@@ -473,16 +450,14 @@ calculated the mean on a per frame basis.  If the input image
 is 2D, then a scalar is given.  If it is 3D, then the means
 will be calculated over the ROI at each time frame and a 1D
 array will be given.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>meanValues</strong> – Mean values calculated over the ROI for each time frame</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">str or array_like</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>meanValues</strong> – Mean values calculated over the ROI for each time frame</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str or array_like</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -495,24 +470,20 @@ some selected rectangular ROI.</p>
 <p>While this function does allow 3D images, the ROI is
 selected over one image and used for all images in the
 third dimension.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>image</strong> (<em>array_like</em>) – Image used.  Can be 2D (y,x) or 3D (y,x,z)</li>
-<li><strong>zMiddle</strong> (<em>int</em>) – The image used in the selection of the rectangle</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>image</strong> (<em>array_like</em>) – Image used.  Can be 2D (y,x) or 3D (y,x,z)</p></li>
+<li><p><strong>zMiddle</strong> (<em>int</em>) – The image used in the selection of the rectangle</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>meanValue</strong> – The mean value for the ROI</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">float or array_like</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>meanValue</strong> – The mean value for the ROI</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float or array_like</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="function">
@@ -524,19 +495,18 @@ a line or a box from the click-point to the actual mouseposition
 (within the same axes) until the button is released.  Within the
 method ‘self.ignore()’ it is checked whether the button from eventpress
 and eventrelease are the same.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>image</strong> (<em>array_like</em>) – 2D (y,x) or 3D (y,x,t) image to be analyzed.  The ROI is drawn on only
-one frame, however</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>coordinates</strong> – The vertices of the selection (x1, x2, y1, y2)</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">tuple</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>image</strong> (<em>array_like</em>) – 2D (y,x) or 3D (y,x,t) image to be analyzed.  The ROI is drawn on only
+one frame, however</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>coordinates</strong> – The vertices of the selection (x1, x2, y1, y2)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -544,16 +514,14 @@ one frame, however</td>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
       
-        <a href="recon.html" class="btn btn-neutral" title="recon package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="recon.html" class="btn btn-neutral float-left" title="recon package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -562,12 +530,14 @@ one frame, however</td>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, Eric Gibbons.
-      Last updated on Feb 27, 2018.
+        &copy; Copyright 2018, Eric Gibbons
+      <span class="lastupdated">
+        Last updated on Apr 04, 2019.
+      </span>
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -580,36 +550,15 @@ one frame, however</td>
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'0.1.1',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>

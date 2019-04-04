@@ -17,42 +17,36 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="python_utils 0.1.1 documentation" href="index.html"/>
-        <link rel="next" title="recon package" href="recon.html"/>
-        <link rel="prev" title="Gibbons Python Utilities" href="index.html"/> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="recon package" href="recon.html" />
+    <link rel="prev" title="Gibbons Python Utilities" href="index.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -94,12 +88,12 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">mri package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#module-mri">Module contents</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-mri.blochsequence">mri.blochsequence module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mri-blochsequence-module">mri.blochsequence module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-mri.cardiac">mri.cardiac module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-mri.epg">mri.epg module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-mri.rawloadX">mri.rawloadX module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-mri.study">mri.study module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-mri.varflip">mri.varflip module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mri-varflip-module">mri.varflip module</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="recon.html">recon package</a></li>
@@ -115,7 +109,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">python_utils</a>
@@ -123,9 +117,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -177,156 +172,8 @@ raw files, simulations, etc.)</p>
 <div class="section" id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="module-mri.blochsequence">
-<span id="mri-blochsequence-module"></span><h2>mri.blochsequence module<a class="headerlink" href="#module-mri.blochsequence" title="Permalink to this headline">¶</a></h2>
-<p>This is a library of various sequnces that are simulated through Bloch numerical methods.</p>
-<dl class="function">
-<dt id="mri.blochsequence.CardiacSat">
-<code class="descclassname">mri.blochsequence.</code><code class="descname">CardiacSat</code><span class="sig-paren">(</span><em>sliceThickness: float</em>, <em>nValues: int</em>, <em>nExcitations: int</em>, <em>T1: float</em>, <em>T2: float</em>, <em>heartRate: float</em>, <em>returnType: int</em><span class="sig-paren">)</span> &#x2192; array<a class="headerlink" href="#mri.blochsequence.CardiacSat" title="Permalink to this definition">¶</a></dt>
-<dd><p>Cardiac bloch simulator for the DiBella cardiac perfusion pulse sequence.  This sequence is essentially is a saturation pulse followed by a small flip angle readout during recovery.  This sequence assumes a beating heart (with the user-defined heart rate).  The output is the magnetization profiles–particularly the slice profile.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>sliceThickness</strong> (<em>float</em>) – The slice thickness to use in meters</li>
-<li><strong>nValues</strong> (<em>int</em>) – The number of isochromats to use</li>
-<li><strong>nExcitations</strong> (<em>int</em>) – The number of excitations in the readout train</li>
-<li><strong>T1</strong> (<em>float</em>) – The T1 recovery constant in seconds</li>
-<li><strong>T2</strong> (<em>float</em>) – The T2 relaxation constant in seconds</li>
-<li><strong>heartRate</strong> (<em>float</em>) – Heart rate in beats per minute</li>
-<li><strong>returnType</strong> (<em>int</em>) – The type of magentization to return (0: echotrain, 1: Mxy, 2: Mz)</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>output</strong> – The magentization signal based on what the returnType is</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">array_like</p>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="function">
-<dt id="mri.blochsequence.FSEAlsop">
-<code class="descclassname">mri.blochsequence.</code><code class="descname">FSEAlsop</code><span class="sig-paren">(</span><em>flips: numpy.ndarray[float64], nValues: int, etl: int, initialPhase: float, T1: float, T2: float, esp: float, returnType: int</em><span class="sig-paren">)</span> &#x2192; array<a class="headerlink" href="#mri.blochsequence.FSEAlsop" title="Permalink to this definition">¶</a></dt>
-<dd><p>SS-FSE bloch simulator for the Alsop diffusion pulse sequence.  The output is the magnetization profiles–particularly the slice profile.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>flips</strong> (<em>array_like</em>) – Flip angles for every pulse in the echo train</li>
-<li><strong>nValues</strong> (<em>int</em>) – The number of isochromats to use</li>
-<li><strong>etl</strong> (<em>int</em>) – The echo train length</li>
-<li><strong>initialPhase</strong> (<em>float</em>) – The phase on the first excitation RF pulse</li>
-<li><strong>T1</strong> (<em>float</em>) – The T1 recovery constant in seconds</li>
-<li><strong>T2</strong> (<em>float</em>) – The T2 relaxation constant in seconds</li>
-<li><strong>esp</strong> (<em>float</em>) – The echo spacing in seconds</li>
-<li><strong>returnType</strong> (<em>int</em>) – The type of magentization to return (0: echotrain, 1: Mxy, 2: Mz)</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>output</strong> – The magentization signal based on what the returnType is</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">array_like</p>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="function">
-<dt id="mri.blochsequence.FSECPMG">
-<code class="descclassname">mri.blochsequence.</code><code class="descname">FSECPMG</code><span class="sig-paren">(</span><em>flips: numpy.ndarray[float64], nValues: int, etl: int, T1: float, T2: float, esp: float, returnType: int</em><span class="sig-paren">)</span> &#x2192; array<a class="headerlink" href="#mri.blochsequence.FSECPMG" title="Permalink to this definition">¶</a></dt>
-<dd><p>SS-FSE bloch simulator for the CPMG pulse sequence.  The output is the magnetization profiles–particularly the slice profile.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>flips</strong> (<em>array_like</em>) – Flip angles for every pulse in the echo train</li>
-<li><strong>nValues</strong> (<em>int</em>) – The number of isochromats to use</li>
-<li><strong>etl</strong> (<em>int</em>) – The echo train length</li>
-<li><strong>T1</strong> (<em>float</em>) – The T1 recovery constant in seconds</li>
-<li><strong>T2</strong> (<em>float</em>) – The T2 relaxation constant in seconds</li>
-<li><strong>esp</strong> (<em>float</em>) – The echo spacing in seconds</li>
-<li><strong>returnType</strong> (<em>int</em>) – The type of magentization to return (0: echotrain, 1: Mxy, 2: Mz)</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>output</strong> – The magentization signal based on what the returnType is</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">array_like</p>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="function">
-<dt id="mri.blochsequence.FSEGibbons">
-<code class="descclassname">mri.blochsequence.</code><code class="descname">FSEGibbons</code><span class="sig-paren">(</span><em>flips: numpy.ndarray[float64], nValues: int, etl: int, initialPhase: float, T1: float, T2: float, esp: float, returnType: int</em><span class="sig-paren">)</span> &#x2192; array<a class="headerlink" href="#mri.blochsequence.FSEGibbons" title="Permalink to this definition">¶</a></dt>
-<dd><p>Cardiac bloch simulator for the ss-MGOT diffusion pulse sequence.  The output is the magnetization profiles–particularly the slice profile.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>flips</strong> (<em>array_like</em>) – Flip angles for every pulse in the echo train</li>
-<li><strong>nValues</strong> (<em>int</em>) – The number of isochromats to use</li>
-<li><strong>etl</strong> (<em>int</em>) – The echo train length</li>
-<li><strong>initialPhase</strong> (<em>float</em>) – The phase on the first excitation RF pulse</li>
-<li><strong>T1</strong> (<em>float</em>) – The T1 recovery constant in seconds</li>
-<li><strong>T2</strong> (<em>float</em>) – The T2 relaxation constant in seconds</li>
-<li><strong>esp</strong> (<em>float</em>) – The echo spacing in seconds</li>
-<li><strong>returnType</strong> (<em>int</em>) – The type of magentization to return (0: echotrain, 1: Mxy, 2: Mz)</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>output</strong> – The magentization signal based on what the returnType is</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">array_like</p>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="function">
-<dt id="mri.blochsequence.FSELRX">
-<code class="descclassname">mri.blochsequence.</code><code class="descname">FSELRX</code><span class="sig-paren">(</span><em>nValues: int</em>, <em>etl: int</em>, <em>initialPhase: float</em>, <em>T1: float</em>, <em>T2: float</em>, <em>esp: float</em>, <em>returnType: int</em><span class="sig-paren">)</span> &#x2192; array<a class="headerlink" href="#mri.blochsequence.FSELRX" title="Permalink to this definition">¶</a></dt>
-<dd><p>SS-FSE bloch simulator for the LeRoux nCPMG diffusion pulse sequence.  The output is the magnetization profiles–particularly the slice profile.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>nValues</strong> (<em>int</em>) – The number of isochromats to use</li>
-<li><strong>etl</strong> (<em>int</em>) – The echo train length</li>
-<li><strong>initialPhase</strong> (<em>float</em>) – The phase on the first excitation RF pulse</li>
-<li><strong>T1</strong> (<em>float</em>) – The T1 recovery constant in seconds</li>
-<li><strong>T2</strong> (<em>float</em>) – The T2 relaxation constant in seconds</li>
-<li><strong>esp</strong> (<em>float</em>) – The echo spacing in seconds</li>
-<li><strong>returnType</strong> (<em>int</em>) – The type of magentization to return (0: echotrain, 1: Mxy, 2: Mz)</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>output</strong> – The magentization signal based on what the returnType is</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">array_like</p>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
+<div class="section" id="mri-blochsequence-module">
+<h2>mri.blochsequence module<a class="headerlink" href="#mri-blochsequence-module" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="module-mri.cardiac">
 <span id="mri-cardiac-module"></span><h2>mri.cardiac module<a class="headerlink" href="#module-mri.cardiac" title="Permalink to this headline">¶</a></h2>
@@ -335,19 +182,18 @@ raw files, simulations, etc.)</p>
 <dt id="mri.cardiac.ContrastFrameNumbers">
 <code class="descclassname">mri.cardiac.</code><code class="descname">ContrastFrameNumbers</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#mri.cardiac.ContrastFrameNumbers" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generates the frame numbers where contrast enters the blood and tissue.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>data</strong> (<em>array_like</em>) – 3D array <cite>(y, x, t)</cite> to be analyzed</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>frameNumbers</strong> – Tuple of the frame numbers <cite>(pdEnd, numPrecontrastBlood,
-numPrecontrastTissue)</cite></td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">tuple (int, int, int)</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> (<em>array_like</em>) – 3D array <cite>(y, x, t)</cite> to be analyzed</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>frameNumbers</strong> – Tuple of the frame numbers <cite>(pdEnd, numPrecontrastBlood,
+numPrecontrastTissue)</cite></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple (int, int, int)</p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -405,28 +251,24 @@ modifications).</p>
 is represented by the EPG state FpFmZ.  Note that the magnetization assumes
 that a “voxel” is divided into N states, as is necessary to make the conversion
 N must be at least as large as twice the number of F+ states minus one.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>FpFmZ</strong> (<em>array_like</em>) – F,Z states, 3xQ vector where there are Q states, where rows represent F+, F-,
-and Z states starting at 0.</li>
-<li><strong>N</strong> (<em>int</em>) – number of spins used to represent the states.  Default is minumum.</li>
-<li><strong>frac</strong> (<em>float</em><em>, </em><em>optional</em>) – fraction of state to increment/decrement so if frac=1, this is
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>FpFmZ</strong> (<em>array_like</em>) – F,Z states, 3xQ vector where there are Q states, where rows represent F+, F-,
+and Z states starting at 0.</p></li>
+<li><p><strong>N</strong> (<em>int</em>) – number of spins used to represent the states.  Default is minumum.</p></li>
+<li><p><strong>frac</strong> (<em>float</em><em>, </em><em>optional</em>) – fraction of state to increment/decrement so if frac=1, this is
 equivalent to first passing FpFmZ through epg_grad().  This is mostly just
-to make plots</li>
+to make plots</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>M</strong> – magnetization vector</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">array_like</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>M</strong> – magnetization vector</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array_like</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="function">
@@ -440,27 +282,23 @@ first refocusing flip angle is the average of 90 and the desired
 refocusing flip angle, as proposed by Hennig.</p>
 <p>All states are kept, for demo purposes, though this
 is not really necessary.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>flipangle</strong> (<em>float</em>) – the flipangle in radians, can be scalar or vector</li>
-<li><strong>etl</strong> (<em>int</em>) – the echo train length</li>
-<li><strong>T1</strong> (<em>float</em>) – relaxation time</li>
-<li><strong>T2</strong> (<em>float</em>) – relaxation time</li>
-<li><strong>esp</strong> (<em>float</em>) – echo spacing</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>flipangle</strong> (<em>float</em>) – the flipangle in radians, can be scalar or vector</p></li>
+<li><p><strong>etl</strong> (<em>int</em>) – the echo train length</p></li>
+<li><p><strong>T1</strong> (<em>float</em>) – relaxation time</p></li>
+<li><p><strong>T2</strong> (<em>float</em>) – relaxation time</p></li>
+<li><p><strong>esp</strong> (<em>float</em>) – echo spacing</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>s</strong> – signal vector</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">array_like</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>s</strong> – signal vector</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array_like</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="function">
@@ -469,54 +307,46 @@ is not really necessary.</p>
 <dd><p>This is essentially the same thing as epg_cpmg but allows the user
 to add an arbitrary starting phase to the tipdown 90 pulse in order
 to simulate nCPMG effects.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>flipangle</strong> (<em>float</em>) – the flipangle in radians, can be scalar or vector</li>
-<li><strong>etl</strong> (<em>int</em>) – the echo train length</li>
-<li><strong>T1</strong> (<em>float</em>) – relaxation time</li>
-<li><strong>T2</strong> (<em>float</em>) – relaxation time</li>
-<li><strong>esp</strong> (<em>float</em>) – echo spacing</li>
-<li><strong>angle</strong> (<em>float</em>) – angle for initial tipdown</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>flipangle</strong> (<em>float</em>) – the flipangle in radians, can be scalar or vector</p></li>
+<li><p><strong>etl</strong> (<em>int</em>) – the echo train length</p></li>
+<li><p><strong>T1</strong> (<em>float</em>) – relaxation time</p></li>
+<li><p><strong>T2</strong> (<em>float</em>) – relaxation time</p></li>
+<li><p><strong>esp</strong> (<em>float</em>) – echo spacing</p></li>
+<li><p><strong>angle</strong> (<em>float</em>) – angle for initial tipdown</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>s</strong> – signal vector</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">array_like</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>s</strong> – signal vector</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array_like</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="function">
 <dt id="mri.epg.epg_grad">
 <code class="descclassname">mri.epg.</code><code class="descname">epg_grad</code><span class="sig-paren">(</span><em>FpFmZ</em>, <em>noadd=0</em><span class="sig-paren">)</span><a class="headerlink" href="#mri.epg.epg_grad" title="Permalink to this definition">¶</a></dt>
 <dd><p>Propagate EPG states through a “unit” gradient.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>FpFmZ</strong> (<em>array_like</em>) – 3xN vector of F+, F- and Z states.</li>
-<li><strong>noadd</strong> (<em>bool</em>) – <cite>True</cite> to NOT add any higher-order states - assume
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>FpFmZ</strong> (<em>array_like</em>) – 3xN vector of F+, F- and Z states.</p></li>
+<li><p><strong>noadd</strong> (<em>bool</em>) – <cite>True</cite> to NOT add any higher-order states - assume
 that they just go to zero.  Be careful - this
-speeds up simulations, but may compromise accuracy!</li>
+speeds up simulations, but may compromise accuracy!</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>FpFmZ</strong> – updated FpFmZ array</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">array_like</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>FpFmZ</strong> – updated FpFmZ array</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array_like</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="function">
@@ -525,32 +355,28 @@ speeds up simulations, but may compromise accuracy!</li>
 <dd><p>Propagate EPG states through a period of relaxation, and
 diffusion over an interval T, with or without a gradient.
 Leave last 3 blank to exclude diffusion effects.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>FpFmZ</strong> (<em>array_like</em>) – 3xN vector of F+, F- and Z states.</li>
-<li><strong>T1</strong> (<em>float</em>) – Relaxation time (s)</li>
-<li><strong>T2</strong> (<em>float</em>) – Relaxation time (s)</li>
-<li><strong>T</strong> (<em>float</em>) – Relaxation time(s)</li>
-<li><strong>kg</strong> (<em>float</em>) – k-space traversal due to gradient (rad/m) for diffusion</li>
-<li><strong>D</strong> (<em>float</em>) – Diffusion coefficient (m^2/s)</li>
-<li><strong>Gon</strong> (<em>bool</em>) – <cite>False</cite> if no gradient is on, <cite>True</cite> if gradient is on</li>
-<li><strong>noadd</strong> (<em>bool</em>) – <cite>True</cite> to NOT add any higher-order states - assume
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>FpFmZ</strong> (<em>array_like</em>) – 3xN vector of F+, F- and Z states.</p></li>
+<li><p><strong>T1</strong> (<em>float</em>) – Relaxation time (s)</p></li>
+<li><p><strong>T2</strong> (<em>float</em>) – Relaxation time (s)</p></li>
+<li><p><strong>T</strong> (<em>float</em>) – Relaxation time(s)</p></li>
+<li><p><strong>kg</strong> (<em>float</em>) – k-space traversal due to gradient (rad/m) for diffusion</p></li>
+<li><p><strong>D</strong> (<em>float</em>) – Diffusion coefficient (m^2/s)</p></li>
+<li><p><strong>Gon</strong> (<em>bool</em>) – <cite>False</cite> if no gradient is on, <cite>True</cite> if gradient is on</p></li>
+<li><p><strong>noadd</strong> (<em>bool</em>) – <cite>True</cite> to NOT add any higher-order states - assume
 that they just go to zero.  Be careful - this
-speeds up simulations, but may compromise accuracy!</li>
+speeds up simulations, but may compromise accuracy!</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>FpFmZ</strong> – updated FpFmZ array</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">array_like</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>FpFmZ</strong> – updated FpFmZ array</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array_like</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="function">
@@ -558,26 +384,22 @@ speeds up simulations, but may compromise accuracy!</li>
 <code class="descclassname">mri.epg.</code><code class="descname">epg_mgrad</code><span class="sig-paren">(</span><em>FpFmZ</em>, <em>noadd=False</em><span class="sig-paren">)</span><a class="headerlink" href="#mri.epg.epg_mgrad" title="Permalink to this definition">¶</a></dt>
 <dd><p>Propagate EPG states through a <em>NEGATIVE</em> “unit” gradient.
 (States move the opposite direction to epg_grad!)</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>FpFmZ</strong> (<em>array_like</em>) – 3xN vector of F+, F- and Z states.</li>
-<li><strong>noadd</strong> (<em>bool</em>) – <cite>True</cite> to NOT add any higher-order states - assume
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>FpFmZ</strong> (<em>array_like</em>) – 3xN vector of F+, F- and Z states.</p></li>
+<li><p><strong>noadd</strong> (<em>bool</em>) – <cite>True</cite> to NOT add any higher-order states - assume
 that they just go to zero.  Be careful - this
-speeds up simulations, but may compromise accuracy!</li>
+speeds up simulations, but may compromise accuracy!</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>FpFmZ</strong> – updated FpFmZ array</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">array_like</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>FpFmZ</strong> – updated FpFmZ array</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array_like</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="function">
@@ -585,51 +407,43 @@ speeds up simulations, but may compromise accuracy!</li>
 <code class="descclassname">mri.epg.</code><code class="descname">epg_relax</code><span class="sig-paren">(</span><em>FpFmZ</em>, <em>T1</em>, <em>T2</em>, <em>T</em><span class="sig-paren">)</span><a class="headerlink" href="#mri.epg.epg_relax" title="Permalink to this definition">¶</a></dt>
 <dd><p>Propagate EPG states through a period of relaxation over an
 interval T</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>FpFmZ</strong> (<em>array_like</em>) – 3xN vector of F+, F- and Z states.</li>
-<li><strong>T1</strong> (<em>float</em>) – Relaxation time (s)</li>
-<li><strong>T2</strong> (<em>float</em>) – Relaxation time (s)</li>
-<li><strong>T</strong> (<em>float</em>) – Relaxation time(s)</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>FpFmZ</strong> (<em>array_like</em>) – 3xN vector of F+, F- and Z states.</p></li>
+<li><p><strong>T1</strong> (<em>float</em>) – Relaxation time (s)</p></li>
+<li><p><strong>T2</strong> (<em>float</em>) – Relaxation time (s)</p></li>
+<li><p><strong>T</strong> (<em>float</em>) – Relaxation time(s)</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>FpFmZ</strong> – updated FpFmZ array</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">array_like</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>FpFmZ</strong> – updated FpFmZ array</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array_like</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="function">
 <dt id="mri.epg.epg_rf">
 <code class="descclassname">mri.epg.</code><code class="descname">epg_rf</code><span class="sig-paren">(</span><em>FpFmZ</em>, <em>alpha</em>, <em>phi=-1.5707963267948966</em><span class="sig-paren">)</span><a class="headerlink" href="#mri.epg.epg_rf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Propogate EPG states through RF pulse.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>FpFmZ</strong> (<em>array_like</em>) – 3xN vector of F+, F- and Z states.</li>
-<li><strong>alpha</strong> (<em>float</em>) – flip angle in radians</li>
-<li><strong>phi</strong> (<em>float</em>) – phase angle in radians</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>FpFmZ</strong> (<em>array_like</em>) – 3xN vector of F+, F- and Z states.</p></li>
+<li><p><strong>alpha</strong> (<em>float</em>) – flip angle in radians</p></li>
+<li><p><strong>phi</strong> (<em>float</em>) – phase angle in radians</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>FpFmZ</strong> – updated FpFmZ array</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">array_like</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>FpFmZ</strong> – updated FpFmZ array</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array_like</p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -652,35 +466,30 @@ from the Hargreaves matlab implementation.</p>
 <p>This class initiates the object to return the pfile object. This code
 should work on most recent GE releases, though it could be easily modified
 by using this convention.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>filename</strong> (<em>str</em>) – The pfile to be read</li>
-<li><strong>verbose</strong> (<em>bool</em>) – Verbose output for the initiation</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filename</strong> (<em>str</em>) – The pfile to be read</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em>) – Verbose output for the initiation</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <dl class="method">
 <dt id="mri.rawloadX.geX.rawloadX">
 <code class="descname">rawloadX</code><span class="sig-paren">(</span><em>verbose=True</em><span class="sig-paren">)</span><a class="headerlink" href="#mri.rawloadX.geX.rawloadX" title="Permalink to this definition">¶</a></dt>
 <dd><p>Loads a pfile to python as a matrix</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>verbose</strong> (<em>str</em>) – displays the pfile header information.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>data</strong> – complex ndarray (coils, slices, echoes, phase, freq) of
-the data</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">array_like</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>verbose</strong> (<em>str</em>) – displays the pfile header information.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>data</strong> – complex ndarray (coils, slices, echoes, phase, freq) of
+the data</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array_like</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -695,142 +504,85 @@ the data</td>
 <p>This class initiates an object that will read in the study
 information file and returns the appropriate data in a clean
 fashion.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>studyNumber</strong> (<em>str</em><em> (</em><em>optional</em><em>)</em>) – The number of the study in the DiBella format (“P—–”).
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>studyNumber</strong> (<em>str</em><em> (</em><em>optional</em><em>)</em>) – The number of the study in the DiBella format (“P—–”).
 If nothing is passed then it will list the 2D and 3D file
-numbers.</td>
-</tr>
-</tbody>
-</table>
+numbers.</p>
+</dd>
+</dl>
+<dl class="method">
+<dt id="mri.study.GetStudy.FrameNumbers">
+<code class="descname">FrameNumbers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mri.study.GetStudy.FrameNumbers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the proton density images, precontrast blood,
+and precontrast tissue.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p><strong>numProton</strong> (<em>int</em>) – Number of proton density images</p></li>
+<li><p><strong>numPrecontrastBlood</strong> (<em>int</em>) – Number of images (not including proton density) before
+blood contrast</p></li>
+<li><p><strong>numPrecontrastTissue</strong> (<em>int</em>) – Number of images (not including proton desnity) before
+tissue contrast</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="method">
 <dt id="mri.study.GetStudy.RawData">
 <code class="descname">RawData</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mri.study.GetStudy.RawData" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the raw data in python form.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>dataRaw</strong> – The data pre-registration</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">array_like</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>dataRaw</strong> – The data pre-registration</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>array_like</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="mri.study.GetStudy.RegisteredData">
 <code class="descname">RegisteredData</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mri.study.GetStudy.RegisteredData" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the registered data in python form.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>dataReg</strong> – The data after registration</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">array_like</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>dataReg</strong> – The data after registration</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>array_like</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="mri.study.GetStudy.TimePoints">
 <code class="descname">TimePoints</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mri.study.GetStudy.TimePoints" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the time points for the acquisition.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>timePoints</strong> – The time points in a 1D array</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">array_like</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>timePoints</strong> – The time points in a 1D array</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>array_like</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
 
 </div>
-<div class="section" id="module-mri.varflip">
-<span id="mri-varflip-module"></span><h2>mri.varflip module<a class="headerlink" href="#module-mri.varflip" title="Permalink to this headline">¶</a></h2>
-<p>This is a method to generate the variable flip angle schedule used in variable FSE (TSE or RARE) pulse sequences.</p>
-<dl class="function">
-<dt id="mri.varflip.GenerateFlipsLRX">
-<code class="descclassname">mri.varflip.</code><code class="descname">GenerateFlipsLRX</code><span class="sig-paren">(</span><em>etl: int</em><span class="sig-paren">)</span> &#x2192; array<a class="headerlink" href="#mri.varflip.GenerateFlipsLRX" title="Permalink to this definition">¶</a></dt>
-<dd><p>Variable flip angle calculation for constant low flip angle based on the LeRoux method.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>etl</strong> (<em>int</em>) – Echo train length</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>flipsVar</strong> – Flip angles in array length of echo train length (in degrees)</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">array_like</td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">References</p>
-<table class="docutils footnote" frame="void" id="id1" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">[1]</td><td>Roux, Patrick Le, and R. Scott Hinks. “Stabilization of echo amplitudes in FSE sequences.” Magnetic resonance in medicine 30.2 (1993): 183-190.</td></tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="function">
-<dt id="mri.varflip.GenerateFlipsVar">
-<code class="descclassname">mri.varflip.</code><code class="descname">GenerateFlipsVar</code><span class="sig-paren">(</span><em>etl: int</em>, <em>esp: float</em>, <em>nMin: int=6</em>, <em>nLope: int=12</em>, <em>flipFirst: float=120.0</em>, <em>flipMin: float=35.0</em>, <em>flipLope: float=35.0</em>, <em>flipLast: float=120.0</em>, <em>flipMax: float=120.0</em>, <em>dbgFlag: int=0</em><span class="sig-paren">)</span> &#x2192; array<a class="headerlink" href="#mri.varflip.GenerateFlipsVar" title="Permalink to this definition">¶</a></dt>
-<dd><p>Variable flip angle calculation based on the GE pulse sequence code.  Originally written by Busse in C, but wrapped in python here.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>etl</strong> (<em>int</em>) – Echo train length</li>
-<li><strong>esp</strong> (<em>float</em>) – Echo spacing (in seconds)</li>
-<li><strong>nMin</strong> (<em>int</em>) – Echo number for the minimum flip angle</li>
-<li><strong>nLope</strong> (<em>int</em>) – Echo number for central k-space</li>
-<li><strong>flipFirst</strong> (<em>float</em>) – Flip angle for first RF pulse (in degrees)</li>
-<li><strong>flipMin</strong> (<em>float</em>) – Minimum flip angle for the pulse sequence (in degrees)</li>
-<li><strong>flipLope</strong> (<em>float</em>) – Flip angle for crossing central k-space (in degrees)</li>
-<li><strong>flipLast</strong> (<em>float</em>) – Flip angle for the last RF pulse (in degrees)</li>
-<li><strong>flipMax</strong> (<em>float</em>) – Maximum flip angle in echo train (in degrees)</li>
-<li><strong>dbgFlag</strong> (<em>int</em>) – Debug flag</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>flipsVar</strong> – Flip angles used in echo train (in degrees)</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">array_like</p>
-</td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">References</p>
-<table class="docutils footnote" frame="void" id="id2" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">[1]</td><td>Busse, Reed F., et al. “Fast spin echo sequences with very long echo trains: design of variable refocusing flip angle schedules and generation of clinical T2 contrast.” Magnetic resonance in medicine 55.5 (2006): 1030-1037.</td></tr>
-</tbody>
-</table>
-</dd></dl>
-
+<div class="section" id="mri-varflip-module">
+<h2>mri.varflip module<a class="headerlink" href="#mri-varflip-module" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -839,7 +591,7 @@ numbers.</td>
         <a href="recon.html" class="btn btn-neutral float-right" title="recon package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral" title="Gibbons Python Utilities" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Gibbons Python Utilities" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -848,12 +600,14 @@ numbers.</td>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, Eric Gibbons.
-      Last updated on Feb 27, 2018.
+        &copy; Copyright 2018, Eric Gibbons
+      <span class="lastupdated">
+        Last updated on Apr 04, 2019.
+      </span>
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -866,36 +620,15 @@ numbers.</td>
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'0.1.1',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>
