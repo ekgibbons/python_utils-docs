@@ -89,6 +89,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">recon package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#module-recon">Module contents</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-recon.bart">recon.bart module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-recon.fftc">recon.fftc module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-recon.imtools">recon.imtools module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-recon.sos">recon.sos module</a></li>
@@ -168,6 +169,32 @@
 </div>
 <div class="section" id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-recon.bart">
+<span id="recon-bart-module"></span><h2>recon.bart module<a class="headerlink" href="#module-recon.bart" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="recon.bart.bart">
+<code class="descclassname">recon.bart.</code><code class="descname">bart</code><span class="sig-paren">(</span><em>nargout</em>, <em>cmd</em>, <em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#recon.bart.bart" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is the python interface for the bart toolbox.  If you want
+more information about individual bart functions, go for</p>
+<p>bart [command] -h</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nargout</strong> (<em>int</em>) – The number of outputs you expect</p></li>
+<li><p><strong>cmd</strong> (<em>str</em>) – The bart command to put in (exclude ‘bart’)</p></li>
+<li><p><strong>*args</strong> (<em>variable</em>) – The inputs into bart, and this can vary</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>output</strong> – The output from bart</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array_like</p>
+</dd>
+</dl>
+</dd></dl>
+
 </div>
 <div class="section" id="module-recon.fftc">
 <span id="recon-fftc-module"></span><h2>recon.fftc module<a class="headerlink" href="#module-recon.fftc" title="Permalink to this headline">¶</a></h2>
@@ -253,8 +280,8 @@
 includes basic sinc interpolation, image cropping, zeropadding,
 and registration.</p>
 <dl class="function">
-<dt id="recon.imtools.AddRician">
-<code class="descclassname">recon.imtools.</code><code class="descname">AddRician</code><span class="sig-paren">(</span><em>v</em>, <em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#recon.imtools.AddRician" title="Permalink to this definition">¶</a></dt>
+<dt id="recon.imtools.add_rician">
+<code class="descclassname">recon.imtools.</code><code class="descname">add_rician</code><span class="sig-paren">(</span><em>v</em>, <em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#recon.imtools.add_rician" title="Permalink to this definition">¶</a></dt>
 <dd><p>r = ricernd(v, s) returns random sample(s) from the Rice (aka Rician)
 distribution with parameters v and s.
 (either v or s may be arrays, if both are, they must match in size)</p>
@@ -281,8 +308,31 @@ inputs.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="recon.imtools.Interpolate">
-<code class="descclassname">recon.imtools.</code><code class="descname">Interpolate</code><span class="sig-paren">(</span><em>im</em>, <em>cropy</em>, <em>cropx</em><span class="sig-paren">)</span><a class="headerlink" href="#recon.imtools.Interpolate" title="Permalink to this definition">¶</a></dt>
+<dt id="recon.imtools.crop">
+<code class="descclassname">recon.imtools.</code><code class="descname">crop</code><span class="sig-paren">(</span><em>im</em>, <em>cropy</em>, <em>cropx</em><span class="sig-paren">)</span><a class="headerlink" href="#recon.imtools.crop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Crops or pads image to the specified dimensions.  This assums
+that the original is up to 4D (dim0, dim1, dim2, dim3) and crops in
+dim0 and dim1.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>im</strong> (<em>array_like</em>) – Array to be cropped.  Can be up to 4D</p></li>
+<li><p><strong>cropy</strong> (<em>int</em>) – Extent of cropping in dim0</p></li>
+<li><p><strong>cropx</strong> (<em>int</em>) – Extent of cropping in dim1</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>im</strong> – Output image</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array_like</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="recon.imtools.interpolate">
+<code class="descclassname">recon.imtools.</code><code class="descname">interpolate</code><span class="sig-paren">(</span><em>im</em>, <em>cropy</em>, <em>cropx</em><span class="sig-paren">)</span><a class="headerlink" href="#recon.imtools.interpolate" title="Permalink to this definition">¶</a></dt>
 <dd><p>This is sinc interpolation (in Fourier domain) along the
 first two dimensions of an array.</p>
 <dl class="field-list simple">
@@ -304,8 +354,8 @@ can have up to four dimensions</p></li>
 </dd></dl>
 
 <dl class="function">
-<dt id="recon.imtools.Register2D">
-<code class="descclassname">recon.imtools.</code><code class="descname">Register2D</code><span class="sig-paren">(</span><em>data</em>, <em>regType='SyNRA'</em>, <em>verbose=True</em><span class="sig-paren">)</span><a class="headerlink" href="#recon.imtools.Register2D" title="Permalink to this definition">¶</a></dt>
+<dt id="recon.imtools.register_2D">
+<code class="descclassname">recon.imtools.</code><code class="descname">register_2D</code><span class="sig-paren">(</span><em>data</em>, <em>regType='SyNRA'</em>, <em>verbose=True</em><span class="sig-paren">)</span><a class="headerlink" href="#recon.imtools.register_2D" title="Permalink to this definition">¶</a></dt>
 <dd><p>This is a 2D registration for a stack of images using
 ANTs</p>
 <dl class="field-list simple">
@@ -327,8 +377,8 @@ occurring on third dimension</p></li>
 </dd></dl>
 
 <dl class="function">
-<dt id="recon.imtools.Register2DModel">
-<code class="descclassname">recon.imtools.</code><code class="descname">Register2DModel</code><span class="sig-paren">(</span><em>data</em>, <em>numPrecontrastBlood=5</em>, <em>numPrecontrastTissue=7</em>, <em>numProtonDensity=10</em>, <em>sliceCheck=4</em>, <em>frameCheck=31</em><span class="sig-paren">)</span><a class="headerlink" href="#recon.imtools.Register2DModel" title="Permalink to this definition">¶</a></dt>
+<dt id="recon.imtools.register_2d_model">
+<code class="descclassname">recon.imtools.</code><code class="descname">register_2d_model</code><span class="sig-paren">(</span><em>data</em>, <em>numPrecontrastBlood=5</em>, <em>numPrecontrastTissue=7</em>, <em>numProtonDensity=10</em>, <em>sliceCheck=4</em>, <em>frameCheck=31</em><span class="sig-paren">)</span><a class="headerlink" href="#recon.imtools.register_2d_model" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function is a wrapper for the matlab implentation
 of 2D registration for 4D perfusion datasets.  This relies on
 the physiological model to handle the contrast changes from
@@ -354,8 +404,8 @@ format (while data is 4D, registration happens only in 2D)</p></li>
 </dd></dl>
 
 <dl class="function">
-<dt id="recon.imtools.Register3D">
-<code class="descclassname">recon.imtools.</code><code class="descname">Register3D</code><span class="sig-paren">(</span><em>data</em>, <em>regType='SyNRA'</em>, <em>verbose=True</em><span class="sig-paren">)</span><a class="headerlink" href="#recon.imtools.Register3D" title="Permalink to this definition">¶</a></dt>
+<dt id="recon.imtools.register_3D">
+<code class="descclassname">recon.imtools.</code><code class="descname">register_3D</code><span class="sig-paren">(</span><em>data</em>, <em>regType='SyNRA'</em>, <em>verbose=True</em><span class="sig-paren">)</span><a class="headerlink" href="#recon.imtools.register_3D" title="Permalink to this definition">¶</a></dt>
 <dd><p>This is a 3D registration for a stack of images using
 ANTs</p>
 <dl class="field-list simple">
@@ -377,8 +427,8 @@ occurring on third dimension</p></li>
 </dd></dl>
 
 <dl class="function">
-<dt id="recon.imtools.Register3DModel">
-<code class="descclassname">recon.imtools.</code><code class="descname">Register3DModel</code><span class="sig-paren">(</span><em>data</em>, <em>numPrecontrastBlood=5</em>, <em>numPrecontrastTissue=7</em>, <em>numProtonDensity=10</em>, <em>sliceCheck=4</em>, <em>frameCheck=31</em><span class="sig-paren">)</span><a class="headerlink" href="#recon.imtools.Register3DModel" title="Permalink to this definition">¶</a></dt>
+<dt id="recon.imtools.register_3d_model">
+<code class="descclassname">recon.imtools.</code><code class="descname">register_3d_model</code><span class="sig-paren">(</span><em>data</em>, <em>numPrecontrastBlood=5</em>, <em>numPrecontrastTissue=7</em>, <em>numProtonDensity=10</em>, <em>sliceCheck=4</em>, <em>frameCheck=31</em><span class="sig-paren">)</span><a class="headerlink" href="#recon.imtools.register_3d_model" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function is a wrapper for the matlab implentation
 of 3D registration for 4D perfusion datasets.  This relies on
 the physiological model to handle the contrast changes from
@@ -396,29 +446,6 @@ format</p></li>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><strong>dataReg</strong> – Registered data array (4D)</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>array_like</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="function">
-<dt id="recon.imtools.crop">
-<code class="descclassname">recon.imtools.</code><code class="descname">crop</code><span class="sig-paren">(</span><em>im</em>, <em>cropy</em>, <em>cropx</em><span class="sig-paren">)</span><a class="headerlink" href="#recon.imtools.crop" title="Permalink to this definition">¶</a></dt>
-<dd><p>Crops or pads image to the specified dimensions.  This assums
-that the original is up to 4D (dim0, dim1, dim2, dim3) and crops in
-dim0 and dim1.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>im</strong> (<em>array_like</em>) – Array to be cropped.  Can be up to 4D</p></li>
-<li><p><strong>cropy</strong> (<em>int</em>) – Extent of cropping in dim0</p></li>
-<li><p><strong>cropx</strong> (<em>int</em>) – Extent of cropping in dim1</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>im</strong> – Output image</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>array_like</p>
