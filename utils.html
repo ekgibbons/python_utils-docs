@@ -92,7 +92,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#module-utils.display">utils.display module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-utils.matutils">utils.matutils module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-utils.mkdir">utils.mkdir module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-utils.readhd5">utils.readhd5 module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-utils.readhdf5">utils.readhdf5 module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-utils.roiselector">utils.roiselector module</a></li>
 </ul>
 </li>
@@ -301,8 +301,8 @@ struct</p></li>
 <div class="section" id="module-utils.mkdir">
 <span id="utils-mkdir-module"></span><h2>utils.mkdir module<a class="headerlink" href="#module-utils.mkdir" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
-<dt id="utils.mkdir.CreateTree">
-<code class="descclassname">utils.mkdir.</code><code class="descname">CreateTree</code><span class="sig-paren">(</span><em>pathName</em><span class="sig-paren">)</span><a class="headerlink" href="#utils.mkdir.CreateTree" title="Permalink to this definition">¶</a></dt>
+<dt id="utils.mkdir.create_tree">
+<code class="descclassname">utils.mkdir.</code><code class="descname">create_tree</code><span class="sig-paren">(</span><em>pathName</em><span class="sig-paren">)</span><a class="headerlink" href="#utils.mkdir.create_tree" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function will take a folder saved in a
 different location and create an identical tree at
 a different location.  These are controlled by the
@@ -322,8 +322,8 @@ hardcoded at the moment.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="utils.mkdir.GetPatientNumber">
-<code class="descclassname">utils.mkdir.</code><code class="descname">GetPatientNumber</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#utils.mkdir.GetPatientNumber" title="Permalink to this definition">¶</a></dt>
+<dt id="utils.mkdir.get_patient_number">
+<code class="descclassname">utils.mkdir.</code><code class="descname">get_patient_number</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#utils.mkdir.get_patient_number" title="Permalink to this definition">¶</a></dt>
 <dd><p>Takes the path name form the DiBella pathname convention.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -339,11 +339,11 @@ hardcoded at the moment.</p>
 </dd></dl>
 
 </div>
-<div class="section" id="module-utils.readhd5">
-<span id="utils-readhd5-module"></span><h2>utils.readhd5 module<a class="headerlink" href="#module-utils.readhd5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-utils.readhdf5">
+<span id="utils-readhdf5-module"></span><h2>utils.readhdf5 module<a class="headerlink" href="#module-utils.readhdf5" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
-<dt id="utils.readhd5.ReadHDF5">
-<code class="descclassname">utils.readhd5.</code><code class="descname">ReadHDF5</code><span class="sig-paren">(</span><em>fileName</em>, <em>varName</em><span class="sig-paren">)</span><a class="headerlink" href="#utils.readhd5.ReadHDF5" title="Permalink to this definition">¶</a></dt>
+<dt id="utils.readhdf5.read_hdf5">
+<code class="descclassname">utils.readhdf5.</code><code class="descname">read_hdf5</code><span class="sig-paren">(</span><em>fileName</em>, <em>varName</em><span class="sig-paren">)</span><a class="headerlink" href="#utils.readhdf5.read_hdf5" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read HDF5 file with some variable name
 as a dictionary key.</p>
 <dl class="field-list simple">
@@ -367,9 +367,77 @@ as a dictionary key.</p>
 <span id="utils-roiselector-module"></span><h2>utils.roiselector module<a class="headerlink" href="#module-utils.roiselector" title="Permalink to this headline">¶</a></h2>
 <p>Classes and functions that provide the ability to select some arbitrary
 region of interest (ROI) and return some statistics over that region.</p>
+<dl class="class">
+<dt id="utils.roiselector.PolygonSelect">
+<em class="property">class </em><code class="descclassname">utils.roiselector.</code><code class="descname">PolygonSelect</code><span class="sig-paren">(</span><em>data</em>, <em>zMiddle=None</em><span class="sig-paren">)</span><a class="headerlink" href="#utils.roiselector.PolygonSelect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This class reads in an image an allows the user to graphically
+select and ROI to generate statistics based on the underlying pixel
+values.</p>
+<p>To do the selection:
+1.  Select points in the figure by enclosing them within a polygon.
+2.  Press the ‘esc’ key to start a new polygon.
+3.  Try holding the ‘shift’ key to move all of the vertices.
+4.  Try holding the ‘ctrl’ key to move a single vertex.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>array_like</em>) – Image data to be analyzed.  Can be 2D (y,x) or 3D (y,x,t).
+The ROI is selected from a single frame and is applied to all
+time images subsequently</p></li>
+<li><p><strong>zMiddle</strong> (<em>int</em>) – The time frame to be used if the image is 3D</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="method">
+<dt id="utils.roiselector.PolygonSelect.display_roi">
+<code class="descname">display_roi</code><span class="sig-paren">(</span><em>saveName=None</em><span class="sig-paren">)</span><a class="headerlink" href="#utils.roiselector.PolygonSelect.display_roi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Displays the ROI overlayed on top of the image used for the
+selection.  Not displayed until <cite>plt.show()</cite> is called.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>saveName</strong> (<em>str</em>) – The filename of the figure being saved</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="utils.roiselector.PolygonSelect.generate_mask">
+<code class="descname">generate_mask</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#utils.roiselector.PolygonSelect.generate_mask" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates a 2D (x,y) mask from the selected ROI.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>mask</strong> – Mask (y,x) of the selected ROI in 1’s (selection) and 0’s (not-selected)</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>array_like</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="utils.roiselector.PolygonSelect.polygon_mean">
+<code class="descname">polygon_mean</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#utils.roiselector.PolygonSelect.polygon_mean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate the mean values based on the selected ROI.  Will
+calculated the mean on a per frame basis.  If the input image
+is 2D, then a scalar is given.  If it is 3D, then the means
+will be calculated over the ROI at each time frame and a 1D
+array will be given.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>meanValues</strong> – Mean values calculated over the ROI for each time frame</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str or array_like</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 <dl class="function">
-<dt id="utils.roiselector.PolygonMean">
-<code class="descclassname">utils.roiselector.</code><code class="descname">PolygonMean</code><span class="sig-paren">(</span><em>data</em>, <em>mask</em><span class="sig-paren">)</span><a class="headerlink" href="#utils.roiselector.PolygonMean" title="Permalink to this definition">¶</a></dt>
+<dt id="utils.roiselector.polygon_mean">
+<code class="descclassname">utils.roiselector.</code><code class="descname">polygon_mean</code><span class="sig-paren">(</span><em>data</em>, <em>mask</em><span class="sig-paren">)</span><a class="headerlink" href="#utils.roiselector.polygon_mean" title="Permalink to this definition">¶</a></dt>
 <dd><p>Given some input image and the mask of the ROI desired (1’s are
 pixels of interest and 0’s are not), find the mean value.</p>
 <p>This function assumes a 2D image can calculates the mean as a
@@ -394,77 +462,9 @@ given it is strictly 2D</p>
 </dl>
 </dd></dl>
 
-<dl class="class">
-<dt id="utils.roiselector.PolygonSelect">
-<em class="property">class </em><code class="descclassname">utils.roiselector.</code><code class="descname">PolygonSelect</code><span class="sig-paren">(</span><em>data</em>, <em>zMiddle=None</em><span class="sig-paren">)</span><a class="headerlink" href="#utils.roiselector.PolygonSelect" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>This class reads in an image an allows the user to graphically
-select and ROI to generate statistics based on the underlying pixel
-values.</p>
-<p>To do the selection:
-1.  Select points in the figure by enclosing them within a polygon.
-2.  Press the ‘esc’ key to start a new polygon.
-3.  Try holding the ‘shift’ key to move all of the vertices.
-4.  Try holding the ‘ctrl’ key to move a single vertex.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>data</strong> (<em>array_like</em>) – Image data to be analyzed.  Can be 2D (y,x) or 3D (y,x,t).
-The ROI is selected from a single frame and is applied to all
-time images subsequently</p></li>
-<li><p><strong>zMiddle</strong> (<em>int</em>) – The time frame to be used if the image is 3D</p></li>
-</ul>
-</dd>
-</dl>
-<dl class="method">
-<dt id="utils.roiselector.PolygonSelect.DisplayROI">
-<code class="descname">DisplayROI</code><span class="sig-paren">(</span><em>saveName=None</em><span class="sig-paren">)</span><a class="headerlink" href="#utils.roiselector.PolygonSelect.DisplayROI" title="Permalink to this definition">¶</a></dt>
-<dd><p>Displays the ROI overlayed on top of the image used for the
-selection.  Not displayed until <cite>plt.show()</cite> is called.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>saveName</strong> (<em>str</em>) – The filename of the figure being saved</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="utils.roiselector.PolygonSelect.GenerateMask">
-<code class="descname">GenerateMask</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#utils.roiselector.PolygonSelect.GenerateMask" title="Permalink to this definition">¶</a></dt>
-<dd><p>Generates a 2D (x,y) mask from the selected ROI.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><strong>mask</strong> – Mask (y,x) of the selected ROI in 1’s (selection) and 0’s (not-selected)</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>array_like</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="utils.roiselector.PolygonSelect.PolygonMean">
-<code class="descname">PolygonMean</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#utils.roiselector.PolygonSelect.PolygonMean" title="Permalink to this definition">¶</a></dt>
-<dd><p>Generate the mean values based on the selected ROI.  Will
-calculated the mean on a per frame basis.  If the input image
-is 2D, then a scalar is given.  If it is 3D, then the means
-will be calculated over the ROI at each time frame and a 1D
-array will be given.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><strong>meanValues</strong> – Mean values calculated over the ROI for each time frame</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>str or array_like</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
 <dl class="function">
-<dt id="utils.roiselector.RectangleMean">
-<code class="descclassname">utils.roiselector.</code><code class="descname">RectangleMean</code><span class="sig-paren">(</span><em>image</em>, <em>zMiddle=None</em><span class="sig-paren">)</span><a class="headerlink" href="#utils.roiselector.RectangleMean" title="Permalink to this definition">¶</a></dt>
+<dt id="utils.roiselector.rectangle_mean">
+<code class="descclassname">utils.roiselector.</code><code class="descname">rectangle_mean</code><span class="sig-paren">(</span><em>image</em>, <em>zMiddle=None</em><span class="sig-paren">)</span><a class="headerlink" href="#utils.roiselector.rectangle_mean" title="Permalink to this definition">¶</a></dt>
 <dd><p>Based on some input image, calculate the mean over
 some selected rectangular ROI.</p>
 <p>While this function does allow 3D images, the ROI is
@@ -487,8 +487,8 @@ third dimension.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="utils.roiselector.RectangleSelect">
-<code class="descclassname">utils.roiselector.</code><code class="descname">RectangleSelect</code><span class="sig-paren">(</span><em>image</em><span class="sig-paren">)</span><a class="headerlink" href="#utils.roiselector.RectangleSelect" title="Permalink to this definition">¶</a></dt>
+<dt id="utils.roiselector.rectangle_select">
+<code class="descclassname">utils.roiselector.</code><code class="descname">rectangle_select</code><span class="sig-paren">(</span><em>image</em><span class="sig-paren">)</span><a class="headerlink" href="#utils.roiselector.rectangle_select" title="Permalink to this definition">¶</a></dt>
 <dd><p>Do a mouseclick somewhere, move the mouse to some destination, release
 the button.  This class gives click- and release-events and also draws
 a line or a box from the click-point to the actual mouseposition
@@ -532,7 +532,7 @@ one frame, however</p>
     <p>
         &copy; Copyright 2018, Eric Gibbons
       <span class="lastupdated">
-        Last updated on Apr 04, 2019.
+        Last updated on Apr 10, 2019.
       </span>
 
     </p>
